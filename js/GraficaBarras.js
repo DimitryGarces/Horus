@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', function () {
             data: [152, 61]
         }],
         chart: {
+            toolbar: {
+                show: false // Oculta la barra de herramientas que contiene el botón de descarga
+            },
             type: 'bar',
             height: 350
         },
