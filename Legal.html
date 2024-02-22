@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ApexCharts -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="container shadow">
+        <header>
+            <div class="container extras">
+                <img src="./img/horus-s.png" class="img-fluid justify-content-center" alt="Imagen" style="max-width: 50%; height: auto;">
+            </div>
+            <h2 class="text-center mt-4 mb-4">Resumen General De Comportamiento en Atención de TATs (De la Ciudad)</h2>
+        </header>
+        <div>
+            <button class="ir shadow volver" data-producto="Ciudad">
+                <img src="./img/volver.png" alt="Volver" />
+            </button>
+        </div>
+        <br />
+        <div class="row mt-4 mb-4 justify-content-center">
+            <div class="col-md-4 text-center">
+            <div class="chart-title">Consejería Jurídica</div>
+            <div id="chart_consejeria"></div>
+            <button class="ir shadow volver" data-producto="Ciudad">
+                <img src="./img/flecha.png"Ver" />
+            </button>
+            </div>
+
+            <!-- Dependencia 2: ADMINISTRACIÓN -->
+            <div class="col-md-4 text-center">
+            <div class="chart-title">Contraloría Municipal</div>
+            <div id="chart_contraloria"></div>
+            <button class="ir shadow volver" data-producto="Social">
+                <img src="./img/flecha.png"Ver" />
+            </button>
+            </div>
+
+            <!-- Dependencia 3: GOBERNACIÓN -->
+            <div class="col-md-4 text-center">
+            <div class="chart-title">Gobernación</div>
+            <div id="chart_gobernacion"></div>
+            <button class="ir shadow volver" data-producto="Administrativo">
+                <img src="./img/flecha.png"Ver" />
+            </button>
+            </div>
+        </div>
+
+        <!-- Dependencia 4: DESARROLLO ECONÓMICO, TURÍSTICO Y ARTESANAL -->
+        <div class="row mt-4 mb-4 justify-content-center">
+            <div class="col-md-4 text-center">
+            <div class="chart-title">Gobierno por Resultados</div>
+            <div id="chart_gobierno"></div>
+            <button class="ir shadow volver" data-producto="Legal">
+                <img src="./img/flecha.png"Ver" />
+            </button>
+            </div>
+
+            <!-- Dependencia 5: DESARROLLO SOCIAL -->
+            <div class="col-md-4 text-center">
+            <div class="chart-title">Transparencia</div>
+            <div id="chart_transparencia"></div>
+            <button class="ir shadow volver" data-producto="Atencion">
+                <img src="./img/flecha.png"Ver" />
+            </button>
+            </div>
+        </div>
+    </div>
+    <script src="./js/GraficaLegal.js"></script>
+    <script src="./js/Hipervinculos.js"></script>
+</body>
+
+</html>
