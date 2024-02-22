@@ -12,26 +12,28 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
-<body>
+<body class="bg-body-secondary">
     <div class="shadow">
         <img src="./img/encabezado.png" class="img-fluid" alt="Imagen">
     </div>
 
-    <!--Graficas Principales-->
-    <div class="container shadow p-3 mb-5 bg-light rounded mt-4">
-        <div class="row mt-4 mb-4">
-            <!-- Gráfica de Barras -->
-            <div class="col-md-6">
-                <!-- Usa col-md-6 para que cada columna ocupe la mitad en dispositivos medianos y grandes -->
-                <div id="barChart"></div>
-            </div>
-            <!-- Gráfica de Dona -->
-            <div class="col-md-6 d-flex justify-content-center">
-                <!-- Usa col-md-6 para que cada columna ocupe la mitad en dispositivos medianos y grandes -->
-                <div id="chart_rendimiento"></div>
+    <div class="col">
+        <div class="p-4">
+            <div class="container-fluid shadow p-3 mb-5 bg-light rounded mt-4">
+                <div class="row mt-4 mb-4">
+                    <!-- Gráfica de Barras -->
+                    <div class="col-md-6 col-12">
+                        <div id="barChart"></div>
+                    </div>
+                    <!-- Gráfica de Dona -->
+                    <div class="col-md-6 col-12 d-flex justify-content-center">
+                        <div id="chart_rendimiento"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
     <br><br><br><br>
     <!--Mejores y peores rendimientos-->
     <div class="container shadow p-3 mb-5 bg-light rounded mt-4">
@@ -40,9 +42,9 @@
                 <h1 class="text-center mb-4" style="background:#60c34c; color:#ffff;">Mejores Rendimientos</h1>
                 <ul class="list-group list-group-flush text-center">
                     <li class="list-group-item bg-light" style="color:#204f7b;">
-                        <h2><img src="img/medalla.png" class="img-fluid me-2" style="width:20px;"
-                            alt="">Protección Civil</h2>
-                        
+                        <h2><img src="img/medalla.png" class="img-fluid me-2" style="width:20px;" alt="">Protección
+                            Civil</h2>
+
                     </li>
                     <li class="list-group-item bg-light" style="color:#204f7b;">
                         <h2>SMDIF</h2>
@@ -79,10 +81,10 @@
                 <div class="chart-title h3">De la Ciudad</div>
                 <div id="chart_ciudad"></div>
                 <button class="ir shadow" data-producto="Ciudad">
-                    <img src="./img/flecha.png"Ver" />
+                    <img src="./img/flecha.png" Ver" />
                 </button>
-                
-                
+
+
             </div>
 
             <!-- Dependencia 2: SOCIAL -->
@@ -90,7 +92,7 @@
                 <div class="chart-title h3">Social y de Resultados</div>
                 <div id="chart_social"></div>
                 <button class="ir shadow" data-producto="Social">
-                    <img src="./img/flecha.png"Ver" />
+                    <img src="./img/flecha.png" Ver" />
                 </button>
             </div>
 
@@ -99,7 +101,7 @@
                 <div class="chart-title h3">Administrativo Financiero</div>
                 <div id="chart_administrativo"></div>
                 <button class="ir shadow" data-producto="Administrativo">
-                    <img src="./img/flecha.png"Ver" />
+                    <img src="./img/flecha.png" Ver" />
                 </button>
             </div>
         </div>
@@ -111,7 +113,7 @@
                 <div class="chart-title h3">Legal y de Planeación</div>
                 <div id="chart_legal"></div>
                 <button class="ir shadow" data-producto="Legal">
-                    <img src="./img/flecha.png"Ver" />
+                    <img src="./img/flecha.png" Ver" />
                 </button>
             </div>
 
@@ -120,7 +122,7 @@
                 <div class="chart-title h3">Atención a Grupos Especiales</div>
                 <div id="chart_atencion"></div>
                 <button class="ir shadow" data-producto="Atencion">
-                    <img src="./img/flecha.png"Ver" />
+                    <img src="./img/flecha.png" Ver" />
                 </button>
             </div>
 
