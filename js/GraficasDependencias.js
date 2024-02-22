@@ -51,7 +51,7 @@ dependencias.forEach(dependencia => {
             series: [dependencia.resueltos, dependencia.pendientes],
             chart: {
                 type: 'donut',
-                width: 300, // Ajusta este valor según tu preferencia
+                width: 410, // Ajusta este valor según tu preferencia
             },
             labels: ['Resueltos', 'Pendientes'],
             colors: ['#204f78', '#b63329'],
@@ -70,7 +70,7 @@ dependencias.forEach(dependencia => {
                             total: {
                                 show: true,
                                 label: dependencia.rendimiento,
-                                fontSize: '30px',
+                                fontSize: '50px',
                                 formatter: function (w) {
                                     const percentage = dependencia.rendimiento;
                                     return '';
