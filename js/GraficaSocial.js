@@ -2,20 +2,20 @@ const dependencias = [
     {
         nombre: 'Social',
         resueltos: 0,
-        pendientes: 6,
+        pendientes: 7,
         rendimiento: '0%'
     },
     {
         nombre: 'Seguridad',
-        resueltos: 19,
+        resueltos: 22,
         pendientes: 13,
-        rendimiento: '59.4%'
+        rendimiento: '62.9%'
     },
     {
         nombre: 'Proteccion',
-        resueltos: 12,
-        pendientes: 1,
-        rendimiento: '92%'
+        resueltos: 13,
+        pendientes: 0,
+        rendimiento: '100%'
     },
     {
         nombre: 'Cultura',
@@ -26,8 +26,8 @@ const dependencias = [
     {
         nombre: 'Desarrollo',
         resueltos: 3,
-        pendientes: 2,
-        rendimiento: '60%'
+        pendientes: 3,
+        rendimiento: '50%'
     },
     {
         nombre: 'IMCUFIDEM',

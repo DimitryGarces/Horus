@@ -1,15 +1,15 @@
 const dependencias = [
     {
         nombre: 'Administracion',
-        resueltos: 11,
+        resueltos: 12,
         pendientes: 3,
-        rendimiento: '78.6%'
+        rendimiento: '80%'
     },
     {
         nombre: 'Tesoreria',
-        resueltos: 53,
-        pendientes: 8,
-        rendimiento: '86.9%'
+        resueltos: 60,
+        pendientes: 6,
+        rendimiento: '90%'
     }
 ];
 // Generar gráficos para cada dependencia

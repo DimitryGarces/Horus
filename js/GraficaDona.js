@@ -1,6 +1,6 @@
-var rendimiento = "67%";
+var rendimiento = "70.6%";
 var options = {
-    series: [179, 88],
+    series: [204, 85],
     chart: {
         width: 500,
         type: 'donut',

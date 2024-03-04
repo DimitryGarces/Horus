@@ -1,15 +1,15 @@
 const dependencias = [
     {
         nombre: 'Educacion',
-        resueltos: 0,
+        resueltos: 1,
         pendientes: 1,
-        rendimiento: '0%'
+        rendimiento: '50%'
     },
     {
         nombre: 'Igualdad',
-        resueltos: 3,
+        resueltos: 4,
         pendientes: 2,
-        rendimiento: '60%'
+        rendimiento: '66.7%'
     },
     {
         nombre: 'DIF',
