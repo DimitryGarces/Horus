@@ -17,54 +17,80 @@
 .ir {
     background-color: #ffffff;
     border: 1px solid #cccccc;
-    padding: 2px; 
-    border-radius: 5px; 
-    cursor: pointer; 
-    display: inline-flex; 
+    padding: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-flex;
     justify-content: center;
-    align-items: center; 
-    width: auto; 
+    align-items: center;
+    width: auto;
     height: auto;
 }
 
 .ir img {
     width: 25px;
-    height: 25px; 
+    height: 25px;
     display: block;
 }
 
 
 
 .ir i {
-    margin-right: 5px; 
+    margin-right: 5px;
 }
 
 body {
     font-family: 'Gotham', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Gotham', sans-serif;
 }
-h1, h3{
+
+h1,
+h3 {
     font-weight: bold;
 }
+
 h3 {
-    font-size: 20px; 
+    font-size: 20px;
 }
+
 h4 {
-    font-size: 30px; 
+    font-size: 30px;
     font-weight: bold;
 }
 
 .extras img {
-    width: 370px; /* Ajusta este valor al tamaño deseado */
+    width: 370px;
     height: auto;
-    display: block; /* Esto asegura que la imagen se centre correctamente */
-    margin: 0 auto; /* Centra la imagen horizontalmente */
+    display: block;
+    margin: 0 auto;
 }
 
 
 .extras {
     text-align: center;
+}
+
+.form-hidden {
+    display: none;
+}
+
+.iniciarS {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.help-icon {
+    font-size: 14px;
+    color: #6c757d;
+    cursor: pointer;
+    margin-left: 5px;
 }
