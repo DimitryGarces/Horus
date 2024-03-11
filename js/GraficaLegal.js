@@ -1,27 +1,27 @@
 const dependencias = [
     {
         nombre: 'Consejeria',
-        resueltos: 5,
-        pendientes: 2,
-        rendimiento: '71.4%'
+        resueltos: 9,
+        pendientes: 5,
+        rendimiento: '64.3%'
     },
     {
         nombre: 'Contraloria',
-        resueltos: 9,
+        resueltos: 11,
         pendientes: 10,
-        rendimiento: '47.4%'
+        rendimiento: '52.4%'
     },
     {
         nombre: 'Gobernacion',
-        resueltos: 0,
-        pendientes: 2,
-        rendimiento: '0%'
+        resueltos: 1,
+        pendientes: 0,
+        rendimiento: '100%'
     },
     {
         nombre: 'Gobierno',
-        resueltos: 9,
-        pendientes: 4,
-        rendimiento: '69.2%'
+        resueltos: 11,
+        pendientes: 2,
+        rendimiento: '84.6%'
     },
     {
         nombre: 'Transparencia',

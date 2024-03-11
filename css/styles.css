@@ -7,8 +7,8 @@
 body {
   font-family: "Gotham", sans-serif;
   font-size: 13px;
-  margin: 0;
   color: #999;
+  margin: 0;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -17,7 +17,22 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 0; /* Agregado para asegurar que no haya relleno en el cuerpo */
 }
+.logo-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 10px;
+}
+
+.logo {
+  max-width: 300px; /* Ajusta el tamaño del logo según tus necesidades */
+}
+header {
+  margin-bottom: 0; /* Agregado para asegurar que no haya margen inferior en el encabezado */
+}
+
 
 .ftco-section {
   flex-grow: 1;
@@ -97,7 +112,7 @@ h3 {
   text-transform: uppercase;
   font-size: 35px;
   font-family: "Gotham", sans-serif;
-  color: #3e91f7;
+  color: #2c2a2a;
   letter-spacing: 3px;
   margin-bottom: 22px;
   font-weight: 500;
@@ -202,7 +217,6 @@ h3 {
   content: '\f26b';
   color: #333;
 }
-
 #loginButton {
   border: none;
   width: 173px;
@@ -213,7 +227,7 @@ h3 {
   align-items: center;
   justify-content: center;
   padding: 0;
-  background: #3e91f7;
+  background: #3ec3fd; /* Mismo color que el fondo del formulario */
   color: #fff;
   text-transform: uppercase;
   font-family: "Gotham", sans-serif;
@@ -222,6 +236,7 @@ h3 {
   position: relative;
   transition: all 0.3s ease;
 }
+
 
 #loginButton span {
   letter-spacing: 3px;

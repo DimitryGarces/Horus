@@ -2,20 +2,20 @@ const dependencias = [
     {
         nombre: 'Educacion',
         resueltos: 1,
-        pendientes: 1,
-        rendimiento: '50%'
+        pendientes: 0,
+        rendimiento: '100%'
     },
     {
         nombre: 'Igualdad',
-        resueltos: 4,
-        pendientes: 2,
-        rendimiento: '66.7%'
+        resueltos: 5,
+        pendientes: 0,
+        rendimiento: '100%'
     },
     {
         nombre: 'DIF',
-        resueltos: 7,
-        pendientes: 0,
-        rendimiento: '100%'
+        resueltos: 8,
+        pendientes: 1,
+        rendimiento: '88.9%'
     },
     {
         nombre: 'Asuntos',

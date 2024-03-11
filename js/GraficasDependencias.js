@@ -2,33 +2,33 @@
 const dependencias = [
     {
         nombre: 'Ciudad',
-        resueltos: 32,
-        pendientes: 30,
-        rendimiento: '57.1%'
+        resueltos: 45,
+        pendientes: 28,
+        rendimiento: '62%'
     },
     {
         nombre: 'Social',
-        resueltos: 48,
-        pendientes: 23,
-        rendimiento: '70.7%'
+        resueltos: 57,
+        pendientes: 22,
+        rendimiento: '73%'
     },
     {
         nombre: 'Administrativo',
-        resueltos: 64,
-        pendientes: 11,
-        rendimiento: '78.6%'
+        resueltos: 74,
+        pendientes: 15,
+        rendimiento: '65.8%'
     },
     {
         nombre: 'Legal',
-        resueltos: 21,
-        pendientes: 21,
-        rendimiento: '51.6%'
+        resueltos: 34,
+        pendientes: 17,
+        rendimiento: '66.8%'
     },
     {
         nombre: 'Atencion',
-        resueltos: 10,
-        pendientes: 3,
-        rendimiento: '53.3%'
+        resueltos: 14,
+        pendientes: 1,
+        rendimiento: '99%'
     },
     {
         nombre: 'Ciudadana',

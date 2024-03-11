@@ -1,21 +1,21 @@
 const dependencias = [
     {
         nombre: 'Obras',
-        resueltos: 2,
-        pendientes: 6,
-        rendimiento: '25%'
+        resueltos: 3,
+        pendientes: 5,
+        rendimiento: '37.5%'
     },
     {
         nombre: 'Servicios',
-        resueltos: 7,
-        pendientes: 9,
-        rendimiento: '43.8%'
+        resueltos: 8,
+        pendientes: 11,
+        rendimiento: '42.1%'
     },
     {
         nombre: 'OPDAPAS',
-        resueltos: 6,
-        pendientes: 7,
-        rendimiento: '46.2%'
+        resueltos: 8,
+        pendientes: 6,
+        rendimiento: '57.1%'
     },
     {
         nombre: 'Gerencia',
@@ -25,15 +25,15 @@ const dependencias = [
     },
     {
         nombre: 'Medio',
-        resueltos: 10,
+        resueltos: 11,
         pendientes: 5,
-        rendimiento: '66.6%'
+        rendimiento: '68.8%'
     },
     {
         nombre: 'Desarrollo',
-        resueltos: 13,
-        pendientes: 2,
-        rendimiento: '86.7%'
+        resueltos: 14,
+        pendientes: 1,
+        rendimiento: '93.3%'
     }
 ];
 

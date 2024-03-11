@@ -1,21 +1,21 @@
 const dependencias = [
     {
         nombre: 'Social',
-        resueltos: 0,
-        pendientes: 7,
-        rendimiento: '0%'
+        resueltos: 1,
+        pendientes: 6,
+        rendimiento: '14.3%'
     },
     {
         nombre: 'Seguridad',
-        resueltos: 22,
+        resueltos: 23,
         pendientes: 13,
-        rendimiento: '62.9%'
+        rendimiento: '63.9%'
     },
     {
         nombre: 'Proteccion',
         resueltos: 13,
-        pendientes: 0,
-        rendimiento: '100%'
+        pendientes: 1,
+        rendimiento: '92.9%'
     },
     {
         nombre: 'Cultura',
@@ -25,9 +25,9 @@ const dependencias = [
     },
     {
         nombre: 'Desarrollo',
-        resueltos: 3,
-        pendientes: 3,
-        rendimiento: '50%'
+        resueltos: 5,
+        pendientes: 1,
+        rendimiento: '83.3%'
     },
     {
         nombre: 'IMCUFIDEM',
@@ -37,9 +37,9 @@ const dependencias = [
     },
     {
         nombre: 'Comunicacion',
-        resueltos: 5,
+        resueltos: 6,
         pendientes: 1,
-        rendimiento: '83.3%'
+        rendimiento: '85.7%'
     }, {
         nombre: 'Secretaria',
         resueltos: 0,
