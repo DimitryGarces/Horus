@@ -31,46 +31,48 @@
                         <div id="chart_rendimiento"></div>
                     </div>
                     <div class="col-md-1">
+                        <h6 style="font-size: 80%;">Rendimientos</h6>
                         <img src="./img/pdf.png" class="img-fluid me-2" style="width:35px; cursor: pointer;"
                             title="Ver Reporte General" id="verPdfGeneral">
                     </div>
                 </div>
             </div>
-            <div class="position-fixed top-0 start-30 translate-middle-x p-3" style="z-index: 11; left: 30%;">
+            <div class="position-fixed top-0 start-30 translate-middle-x p-3" style="z-index: 11; width: 95%; left: 50%;">
                 <div id="pdfToastGeneral" class="toast d-none" role="alert" aria-live="assertive" aria-atomic="true"
-                     data-bs-autohide="false" data-bs-delay="0" style="width: 260%; max-width: none;">
+                     data-bs-autohide="false" data-bs-delay="0" style="width: 100%; max-width: none;">
                     <div class="toast-header">
                         <strong class="me-auto">Reporte General</strong>
                         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                     </div>
                     <div class="toast-body d-flex align-items-center justify-content-center">
                         <!-- Agrega un iframe con la fuente del PDF -->
-                        <iframe src="./docs/9MarzoGeneral.pdf" width="130%" height="400" style="border: none;"></iframe>
+                        <iframe src="./docs/9MarzoGeneral.pdf" width="100%" height="500" style="border: none;"></iframe>
                     </div>
                 </div>
             </div>      
             <!--Mejores y peores rendimientos-->
             <div class="shadow p-3 mb-5 bg-light rounded mt-4">
                 <div class="row">
-                    <h1 class="text-center mb-4" style="background:#204f7be7; color:#ffff;">Rendimientos
+                    <h1 class="text-center mb-4" style="background:#204f7be7; color:#ffff;">Resumen
                         <img src="./img/pdf.png" class="img-fluid me-2" style="width:35px; cursor: pointer;"
                             title="Ver Mejores y Peores Rendimientos" id="verPdf">
                     </h1>
                 </div>
 
-                <div class="position-fixed top-0 start-60 translate-middle-x p-3" style="z-index: 11; left: 30%;">
+                <div class="position-fixed top-0 start-25 translate-middle-x p-3" style="z-index: 11; width: 95%; left: 50%;">
                     <div id="pdfToast" class="toast d-none" role="alert" aria-live="assertive" aria-atomic="true"
-                        data-bs-autohide="false" data-bs-delay="0" style="width: 260%; max-width: none;">
+                        data-bs-autohide="false" data-bs-delay="0" style="width: 100%; max-width: none;">
                         <div class="toast-header">
-                            <strong class="me-auto">Mejores y Peores Rendimientos</strong>
+                            <strong class="me-auto">Resumen</strong>
                             <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                         </div>
                         <div class="toast-body d-flex align-items-center justify-content-center">
                             <!-- Agrega un iframe con la fuente del PDF -->
-                            <iframe src="./docs/9MARZO.pdf" width="130%" height="400" style="border: none;"></iframe>
+                            <iframe src="./docs/9MARZO.pdf" width="100%" height="500" style="border: none;"></iframe>
                         </div>
                     </div>
                 </div>
+                
 
                 <div class="row mb-4">
                     <div class="col-md-6">
