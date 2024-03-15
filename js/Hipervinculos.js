@@ -1,6 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
     const buttons = document.querySelectorAll('.ir');
     const volverButtons = document.querySelectorAll('.volver');
+    volverButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            // Redirige al usuario a la página index.html
+            window.location.href = 'index.html';
+        });
+    });
 
     const verPdfContainer = document.getElementById('verPdf');
     const pdfToast = new bootstrap.Toast(document.getElementById('pdfToast'));
@@ -15,13 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Redirige al usuario a la nueva URL en la misma ventana
             window.location.href = urlDestino;
-        });
-    });
-
-    volverButtons.forEach(function (button) {
-        button.addEventListener('click', function () {
-            // Redirige al usuario a la página index.html
-            window.location.href = 'index.html';
         });
     });
     verPdfContainer.addEventListener('click', function() {
