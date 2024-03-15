@@ -1,0 +1,64 @@
+{
+    "Gabinete": [
+        {
+            "Ciudad": [
+                {
+                    "RendimientoTot": [
+                        {
+                            "resueltos": 45,
+                            "pendientes": 28,
+                            "rendimiento": "62%"
+                        }
+                    ],
+                    "Direcciones": [
+                        {
+                            "Obras": [
+                                {
+                                    "resueltos": 3,
+                                    "pendientes": 5,
+                                    "rendimiento": "37.5%"
+                                }
+                            ],
+                            "Servicios": [
+                                {
+                                    "resueltos": 8,
+                                    "pendientes": 11,
+                                    "rendimiento": "42.1%"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "Social": [
+                {
+                    "RendimientoTot": [
+                        {
+                            "resueltos": 57,
+                            "pendientes": 22,
+                            "rendimiento": "73%"
+                        }
+                    ],
+                    "Direcciones": [
+                        {
+                            "Social": [
+                                {
+                                    "resueltos": 1,
+                                    "pendientes": 6,
+                                    "rendimiento": "14.3%"
+                                }
+                            ],
+                            "Seguridad": [
+                                {
+                                    "resueltos": 23,
+                                    "pendientes": 13,
+                                    "rendimiento": "63.9%"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

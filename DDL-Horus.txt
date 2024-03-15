@@ -1,0 +1,148 @@
+CREATE TABLE Rendimiento (
+Id_Rendimiento TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+Fecha DATE NN,
+Resueltos INT UNSIGNED NOT NULL,
+Pendientes INT UNSIGNED NOT NULL,
+Rendimiento TINYINT UNSIGNED NOT NULL
+);
+
+CREATE TABLE Gabinete (
+Id_Gabinete TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+Nombre VARCHAR(50)  NOT NULL
+);
+
+CREATE TABLE Direccion(
+Id_Direccion TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+Id_Gabinete TINYINT UNSIGNED,
+Id_Rendimiento TINYINT UNSIGNED,
+Nombre VARCHAR(60) NOT NULL,
+FOREIGN KEY (Id_Gabinete) REFERENCES Gabinete(Id_Gabinete),
+FOREIGN KEY (Id_Rendimiento) REFERENCES Rendimiento(Id_Rendimiento) 
+);
+
+CREATE TABLE SubDireccion(
+Id_SubDireccion TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+Id_Direccion TINYINT UNSIGNED,
+Nombre VARCHAR(60) NOT NULL,
+FOREIGN KEY (Id_Direccion) REFERENCES Direccion(Id_Direccion)
+);
+
+CREATE TABLE Jefatura(
+Id_Jefatura TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+Id_SubDireccion TINYINT UNSIGNED,
+Nombre VARCHAR(60) NOT NULL,
+FOREIGN KEY (Id_SubDireccion) REFERENCES SubDireccion(Id_SubDireccion)
+);
+
+CREATE TABLE DatosUsuario(
+Id_DatosU INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+Nombre VARCHAR (60) NOT NULL,
+Usuario VARCHAR (15) NOT NULL,
+Contrasenia VARCHAR (12) NOT NULL,
+Telefono VARCHAR (10) NOT NULL
+);
+
+CREATE TABLE Rol(
+Id_Rol TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+Nombre Varchar (20) NOT NULL,
+Descripcion VARCHAR (50) NOT NULL
+);
+
+CREATE TABLE Usuario(
+Id_Usuario INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+Id_DatosU INT UNSIGNED,
+Id_Rol TINYINT UNSIGNED,
+FOREIGN KEY (Id_DatosU) REFERENCES DatosUsuario(Id_DatosU),
+FOREIGN KEY (Id_Rol) REFERENCES Rol(Id_Rol)
+);
+
+CREATE TABLE EmpleadoDirec(
+Id_Direc TINYINT UNSIGNED ,
+Id_Usuario INT UNSIGNED,
+FOREIGN KEY (Id_Usuario) REFERENCES Usuario(Id_Usuario),
+FOREIGN KEY (Id_Direc) REFERENCES Direccion(Id_Direccion)
+);
+
+CREATE TABLE EmpleadoSubDirec(
+Id_SubDirec TINYINT UNSIGNED,
+Id_Usuario INT UNSIGNED,
+FOREIGN KEY (Id_Usuario) REFERENCES Usuario(Id_Usuario),
+FOREIGN KEY (Id_SubDirec) REFERENCES SubDireccion(Id_SubDireccion)
+);
+
+CREATE TABLE EmpleadoJefatura(
+Id_Jefatura TINYINT UNSIGNED,
+Id_Usuario INT UNSIGNED,
+FOREIGN KEY (Id_Usuario) REFERENCES Usuario(Id_Usuario),
+FOREIGN KEY (Id_Jefatura) REFERENCES Jefatura(Id_Jefatura)
+);
+
+CREATE TABLE Prioridad(
+Id_Prioridad TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+Path VARCHAR (200) NOT NULL
+);
+
+CREATE TABLE Estatus(
+Id_Estatus TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+Estado VARCHAR (35) NOT NULL,
+Descripcion VARCHAR (150) NOT NULL
+);
+
+CREATE TABLE Procedencia(
+Id_Procedencia TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+Tipo VARCHAR (35) NOT NULL
+);
+
+
+CREATE TABLE Situacion(
+Folio INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+Id_Prioridad TINYINT UNSIGNED,
+Id_Estatus TINYINT UNSIGNED,
+Id_Procedencia TINYINT UNSIGNED,
+Remitente VARCHAR (60) NOT NULL,
+Asunto VARCHAR (150) NOT NULL,
+Fecha_Recibida DATE NOT NULL,
+Fecha_Vencimiento DATE NOT NULL,
+Fecha_Finalizacion DATE,
+Path VARCHAR(200) NOT NULL,
+FOREIGN KEY (Id_Prioridad) REFERENCES Prioridad(Id_Prioridad),
+FOREIGN KEY (Id_Estatus) REFERENCES Estatus(Id_Estatus),
+FOREIGN KEY (Id_Procedencia) REFERENCES Procedencia(Id_Procedencia)
+);
+
+CREATE TABLE Turno(
+Id_Turno INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+Id_UsuarioEnvia INT UNSIGNED,
+Folio INT UNSIGNED,
+Instrucciones VARCHAR (150),
+FechaGenerada DATE NOT NULL,
+FOREIGN KEY (Id_UsuarioEnvia) REFERENCES Usuario(Id_Usuario),
+FOREIGN KEY (Folio) REFERENCES Situacion(Folio)
+);
+
+CREATE TABLE Archivo(
+Id_Turno INT UNSIGNED,
+Path VARCHAR (200) NOT NULL,
+FOREIGN KEY (Id_Turno) REFERENCES Turno(Id_Turno)
+);
+
+CREATE TABLE DireccionTurnada(
+Id_DirecTurn TINYINT UNSIGNED,
+Id_Turno INT UNSIGNED,
+FOREIGN KEY (Id_DirecTurn) REFERENCES Direccion(Id_Direccion),
+FOREIGN KEY (Id_Turno) REFERENCES Turno(Id_Turno)
+);
+
+CREATE TABLE SubDireccionTurnada(
+Id_SubDirecTurn TINYINT UNSIGNED,
+Id_Turno INT UNSIGNED,
+FOREIGN KEY (Id_SubDirecTurn) REFERENCES SubDireccion(Id_SubDireccion),
+FOREIGN KEY (Id_Turno) REFERENCES Turno(Id_Turno)
+);
+
+CREATE TABLE JefaturaTurnada(
+Id_JefaturaTurn TINYINT UNSIGNED,
+Id_Turno INT UNSIGNED,
+FOREIGN KEY (Id_JefaturaTurn) REFERENCES Jefatura(Id_Jefatura),
+FOREIGN KEY (Id_Turno) REFERENCES Turno(Id_Turno)
+);
