@@ -23,32 +23,32 @@
             <div class="container-fluid shadow p-3 mb-5 bg-light rounded mt-4">
                 <div class="row mt-4 mb-4">
                     <!-- Gráfica de Barras -->
-                    <div class="col-md-6 col-12">
+                    <div class="col-sm-6 col-md-5 col-lg-6">
                         <div id="barChart"></div>
                     </div>
                     <!-- Gráfica de Dona -->
-                    <div class="col-md-5 col-11 d-flex justify-content-center">
+                    <div class="col-sm-4 col-md-5 col-lg-5 d-flex justify-content-center">
                         <div id="chart_rendimiento"></div>
                     </div>
-                    <div class="col-md-1">
-                        <h6 style="font-size: 80%;">Rendimientos</h6>
-                        <img src="./img/pdf.png" class="img-fluid me-2" style="width:35px; cursor: pointer;"
-                            title="Ver Reporte General" id="verPdfGeneral" onclick="openPDF('./docs/9MarzoGeneral.pdf')">
+                    <div class="col-sm-2 col-md-2 col-lg-1 d-flex justify-content-end">
+                        <div style="margin-top: 0; margin-bottom: auto;">
+                            <img src="./img/pdf.png" class="img-fluid me-2"
+                                style="width: calc(1vh + 2.5vw); cursor: pointer;" title="Ver Reporte General"
+                                id="verPdfGeneral" onclick="openPDF('./docs/9MarzoGeneral.pdf')">
+                        </div>
                     </div>
+
+
                 </div>
             </div>
             <!--Mejores y peores rendimientos-->
             <div class="shadow p-3 mb-5 bg-light rounded mt-4">
-                <div class="row">
-                    <h1 class="text-center mb-4" style="background:#204f7be7; color:#ffff;">Resumen
-                        <img src="./img/pdf.png" class="img-fluid me-2" style="width:35px; cursor: pointer;"
-                            title="Ver Mejores y Peores Rendimientos" id="verPdf" onclick="openPDF('./docs/9MARZO.pdf')">
-                    </h1>
-                </div>
-
 
                 <div class="row mb-4">
-                    <div class="col-md-6">
+                    <div class="col-sm-1 col-md-1 col-lg-1">
+
+                    </div>
+                    <div class="col-sm-5 col-md-5 col-lg-5">
                         <h1 class="text-center mb-4" style="background:#60c34c; color:#ffff;">Mejores
                         </h1>
                         <ul class="list-group list-group-flush text-center">
@@ -66,7 +66,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-sm-5 col-md-5 col-lg-5">
                         <h1 class="text-center mb-4" style="background:#b63329; color:#ffff;">Peores
                         </h1>
                         <ul class="list-group list-group-flush text-center">
@@ -81,84 +81,93 @@
                             </li>
                         </ul>
                     </div>
+                    <div class="col-sm-1 col-md-1 col-lg-1 d-flex justify-content-end">
+                        <div style="margin-top: 0; margin-bottom: auto;">
+                            <img src="./img/pdf.png" class="img-fluid me-2"
+                                style="width:calc(1vh + 2.5vw); cursor: pointer;"
+                                title="Ver Mejores y Peores Rendimientos" id="verPdf"
+                                onclick="openPDF('./docs/9MARZO.pdf')">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!--Graficas por dependencia-->
+        <div class="shadow p-3 mb-5 bg-light rounded mt-4">
+            <!-- Dependencia 1: TESORERIA -->
+            <div class="row mt-4 mb-4 justify-content-center">
+                <!-- Dependencia 1: CIUDAD -->
+                <div class="col-md-4 ">
+                    <div class="chart-title h3">De la Ciudad</div>
+                    <div id="Ciudad"></div>
+                    <div class="text-center">
+                        <button class="ir shadow" data-producto="Ciudad">
+                            <img src="./img/flecha.png" alt="Ver" />
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dependencia 2: SOCIAL -->
+                <div class="col-md-4 text-center">
+                    <div class="chart-title h3">Social y de Resultados</div>
+                    <div id="Social_y_de_Resultados"></div>
+                    <button class="ir shadow" data-producto="Social">
+                        <img src="./img/flecha.png" alt="Ver" />
+                    </button>
                 </div>
             </div>
 
-            <!--Graficas por dependencia-->
-            <br>
-            <div class="shadow p-3 mb-5 bg-light rounded mt-4">
-                <!-- Dependencia 1: TESORERIA -->
-                <div class="row mt-4 mb-4 justify-content-center">
-                    <!-- Dependencia 1: CIUDAD -->
-                    <div class="col-md-4 ">
-                        <div class="chart-title h3">De la Ciudad</div>
-                        <div id="chart_ciudad"></div>
-                        <div class="text-center">
-                            <button class="ir shadow" data-producto="Ciudad">
-                                <img src="./img/flecha.png" alt="Ver" />
-                            </button>
-                        </div>
-                    </div>
 
-                    <!-- Dependencia 2: SOCIAL -->
-                    <div class="col-md-4 text-center">
-                        <div class="chart-title h3">Social y de Resultados</div>
-                        <div id="chart_social"></div>
-                        <button class="ir shadow" data-producto="Social">
+            <!-- Dependencia 4: DESARROLLO ECONÓMICO, TURÍSTICO Y ARTESANAL -->
+            <div class="row mt-4 mb-4 justify-content-center">
+                <div class="col-md-4">
+                    <div class="chart-title h3">Legal y de Planeación</div>
+                    <div id="Legal_y_Planeacion"></div>
+                    <div class="text-center">
+                        <button class="ir shadow" data-producto="Legal">
                             <img src="./img/flecha.png" alt="Ver" />
                         </button>
                     </div>
                 </div>
+                <!-- Dependencia 3: ADMINISTRATIVO -->
+                <div class="col-md-4 text-center">
+                    <div class="chart-title h3">Administrativo Financiero</div>
+                    <div id="Administrativo_Financiero"></div>
+                    <button class="ir shadow" data-producto="Administrativo">
+                        <img src="./img/flecha.png" alt="Ver" />
+                    </button>
+                </div>
+                <!-- Dependencia 5: DESARROLLO SOCIAL -->
+                <div class="col-md-4 text-center">
+                    <div class="chart-title h3">Atención a Grupos Especiales</div>
+                    <div id="Atencion_a_grupos_especiales"></div>
+                    <button class="ir shadow" data-producto="Atencion">
+                        <img src="./img/flecha.png" alt="Ver" />
+                    </button>
+                </div>
 
+                <div class="col-md-4 text-center">
+                    <div class="chart-title h3">Atención Ciudadana</div>
+                    <div id="Atencion_Ciudadana" data-producto="Ciudadana"></div>
+                </div>
 
-                <!-- Dependencia 4: DESARROLLO ECONÓMICO, TURÍSTICO Y ARTESANAL -->
-                <div class="row mt-4 mb-4 justify-content-center">
-                    <div class="col-md-4">
-                        <div class="chart-title h3">Legal y de Planeación</div>
-                        <div id="chart_legal"></div>
-                        <div class="text-center">
-                            <button class="ir shadow" data-producto="Legal">
-                                <img src="./img/flecha.png" alt="Ver" />
-                            </button>
-                        </div>
-                    </div>
-                    <!-- Dependencia 3: ADMINISTRATIVO -->
-                    <div class="col-md-4 text-center">
-                        <div class="chart-title h3">Administrativo Financiero</div>
-                        <div id="chart_administrativo"></div>
-                        <button class="ir shadow" data-producto="Administrativo">
-                            <img src="./img/flecha.png" alt="Ver" />
-                        </button>
-                    </div>
-                    <!-- Dependencia 5: DESARROLLO SOCIAL -->
-                    <div class="col-md-4 text-center">
-                        <div class="chart-title h3">Atención a Grupos Especiales</div>
-                        <div id="chart_atencion"></div>
-                        <button class="ir shadow" data-producto="Atencion">
-                            <img src="./img/flecha.png" alt="Ver" />
-                        </button>
-                    </div>
-
-                    <div class="col-md-4 text-center">
-                        <div class="chart-title h3">Atención Ciudadana</div>
-                        <div id="chart_ciudadana" data-producto="Ciudadana"></div>
-                    </div>
-
-                    <!-- Dependencia 2: ADMINISTRACIÓN -->
-                    <div class="col-md-4 text-center">
-                        <div class="chart-title h3">Defensoría Municipal de los Derechos Humanos</div>
-                        <div id="chart_defensoria" data-producto="Secretaria"></div>
-                    </div>
+                <!-- Dependencia 2: ADMINISTRACIÓN -->
+                <div class="col-md-4 text-center">
+                    <div class="chart-title h3">Defensoría Municipal de los Derechos Humanos</div>
+                    <div id="Defensoria_Municipal_de_los_Derechos_Humanos" data-producto="Secretaria"></div>
                 </div>
             </div>
         </div>
     </div>
+    </div>
     <script>
         function openPDF(url) {
-            <iframe src="url" height="400" width="600" title="Ejemplo de Frame"></iframe>
-            //window.open(url, '_blank');
+            window.open(url, '_blank');
         }
     </script>
+
     <!-- Bootstrap JS (asegúrate de incluir Popper.js si estás usando Bootstrap 4) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Tu script personalizado -->
