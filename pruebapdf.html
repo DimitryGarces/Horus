@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renderizar HTML a PDF</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <div id="page1" class="page">
+        <h1>Página 1</h1>
+        <p>Contenido de la página 1...</p>
+    </div>
+
+    <div id="page2" class="page">
+        <h1>Página 2</h1>
+        <p>Contenido de la página 2...</p>
+    </div>
+
+    <div id="page3" class="page">
+        <h1>Página 3</h1>
+        <p>Contenido de la página 3...</p>
+    </div>
+
+    <button id="download-pdf">Descargar PDF</button>
+
+    <script>
+        document.getElementById('download-pdf').addEventListener('click', async () => {
+            const pages = document.querySelectorAll('.page');
+            const options = {
+                filename: 'documento.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
+                margin: { top: 0.5, right: 0.5, bottom: 0.5, left: 0.5 },
+                pagebreak: { mode: 'avoid-all', after: '.page' }
+            };
+
+            try {
+                const pdf = await html2pdf().from(pages).set(options).outputPdf();
+                pdf.save();
+                console.log('PDF generado correctamente.');
+            } catch (error) {
+                console.error('Error al generar el PDF:', error);
+            }
+        });
+    </script>
+</body>
+</html>
