@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 fontSize: '40px', // Tamaño de fuente predeterminado para las etiquetas de datos
                 colors: ['#fff', '#fff']
             },
-            offsetY: 10, // Ajusta la posición vertical del número
+            offsetY: 15, // Ajusta la posición vertical del número
             formatter: function (val) {
                 return val;
             }
