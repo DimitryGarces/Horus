@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var options = {
         series: [{
             name: 'Total',
-            data: [270, 86]
+            data: [336, 73]
         }],
         chart: {
             toolbar: {
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 fontSize: '40px', // Tamaño de fuente predeterminado para las etiquetas de datos
                 colors: ['#fff', '#fff']
             },
-            offsetY: 0, // Ajusta la posición vertical del número
+            offsetY: 10, // Ajusta la posición vertical del número
             formatter: function (val) {
                 return val;
             }
