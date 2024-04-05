@@ -4,20 +4,35 @@ function updateChartSize(chart, screenWidth) {
     var chartWidth;
     var font;
     if (screenWidth < 600) { // Extra small devices (portrait phones)
-        chartWidth = 180;
-        font = '10px';
+        chartWidth = 250;
+        font = '20px';
     } else if (screenWidth < 800) { // Small devices (landscape phones)
-        chartWidth = 280;
-        font = '15px';
+        chartWidth = 300;
+        font = '25px';
     } else if (screenWidth < 1100) { // Medium devices (tablets)
-        chartWidth = 380;
-        font = '30px';
+        chartWidth = 350;
+        font = '35px';
     } else if (screenWidth < 1400) { // Large devices (desktops)
         chartWidth = 480;
         font = '50px';
-    } else { // Extra large devices (large desktops)
-        chartWidth = 540;
+    }
+    else if (screenWidth < 2000) { // Large devices (desktops)
+        chartWidth = 580;
         font = '70px';
+    }
+    else if (screenWidth < 2400) { // Large devices (desktops)
+        chartWidth = 680;
+        font = '90px';
+    }
+    else if (screenWidth < 3200) { // Large devices (desktops)
+        chartWidth = 750;
+        font = '110px';
+    }else if (screenWidth < 4000) { // Large devices (desktops)
+        chartWidth = 800;
+        font = '140px';
+    } else { // Extra large devices (large desktops)
+        chartWidth = 840;
+        font = '160px';
     }
 
     // Actualizar el tamaño del gráfico y la fuente
