@@ -3,10 +3,7 @@ function updateChartSize(chart, screenWidth) {
     // Define el tamaño del gráfico donut en función del tamaño de la pantalla
     var chartWidth;
     var font;
-    if (screenWidth < 600) { // Extra small devices (portrait phones)
-        chartWidth = 250;
-        font = '20px';
-    } else if (screenWidth < 800) { // Small devices (landscape phones)
+    if (screenWidth < 800) { // Small devices (landscape phones)
         chartWidth = 300;
         font = '25px';
     } else if (screenWidth < 1100) { // Medium devices (tablets)
@@ -14,7 +11,7 @@ function updateChartSize(chart, screenWidth) {
         font = '35px';
     } else if (screenWidth < 1400) { // Large devices (desktops)
         chartWidth = 480;
-        font = '50px';
+        font = '55px';
     }
     else if (screenWidth < 2000) { // Large devices (desktops)
         chartWidth = 580;
