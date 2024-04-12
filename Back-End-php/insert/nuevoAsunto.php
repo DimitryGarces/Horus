@@ -2,7 +2,7 @@
 // Verificar si se reciben datos mediante POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Incluir el archivo de conexión a la base de datos
-    include('./includes/db.php');
+    include('../includes/db.php');
 
     // Obtener los datos del formulario
     $asunto = $_POST['asunto'];
@@ -11,10 +11,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $fechaRecibida = $_POST['fechaRecibida'];
     $fechaVencimiento = $_POST['fechaVencimiento'];
     $prioridad = $_POST['prioridad'];
+    $documento = $_POST['documento'];
+    $servicio = $_POST['idServicio'];
+    $folio = $_POST['folio'];
 
     // Definir la consulta SQL para insertar los datos en la tabla Situacion
-    $sql = "INSERT INTO Situacion (Id_Prioridad, Id_Estatus, Id_Procedencia, Remitente, Asunto, Fecha_Recibida, Fecha_Vencimiento, Path) 
-        VALUES (?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO Situacion (Id_Prioridad, Id_Estatus, Id_Procedencia, Remitente, Asunto, Fecha_Recibida, Fecha_Vencimiento, Path,Id_Servicio, FolioGen) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     // Preparar la consulta
     $stmt = mysqli_prepare($con, $sql);
@@ -23,14 +26,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $idEstatus = 1;
 
     // Vincular los parámetros
-    mysqli_stmt_bind_param($stmt, "iiissss", $prioridad, $idEstatus, $procedencia, $remitente, $asunto, $fechaRecibida, $fechaVencimiento, $path);
+    // Vincular los parámetros
+    mysqli_stmt_bind_param($stmt, "iiisssssis", $prioridad, $idEstatus, $procedencia, $remitente, $asunto, $fechaRecibida, $fechaVencimiento, $documento, $servicio, $folio);
 
     // Ejecutar la consulta
     if (mysqli_stmt_execute($stmt)) {
         // La inserción fue exitosa
+        header('Content-Type: application/json');
         echo json_encode(array('success' => true));
     } else {
         // Error en la ejecución de la consulta
+        header('Content-Type: application/json');
         echo json_encode(array('error' => 'Error al insertar los datos en la base de datos.'));
     }
 
@@ -39,5 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mysqli_close($con);
 } else {
     // Si no se reciben datos mediante POST, devolver un mensaje de error
+    header('Content-Type: application/json');
     echo json_encode(array('success' => false, 'message' => 'No se recibieron datos POST'));
 }
+?>
