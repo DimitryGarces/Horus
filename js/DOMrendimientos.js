@@ -35,7 +35,7 @@ function agregarMejores() {
                 <p>${'7'}</p>
             </div>
             <div class="col">
-                <div id="chart" style="margin-top: -0.5in; margin-left: .3in;"></div>
+                <div id="chart" style="margin-top: -0.5in; margin-left: .3in; margin: 0;"></div>
             </div>
         </div>
     </div>

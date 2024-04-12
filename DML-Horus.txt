@@ -1,0 +1,162 @@
+INSERT INTO rol (nombre, descripcion) VALUES
+('Administrador', 'Gestión completa del sistema, de usuarios, roles, permisos y configuraciones.'),
+('Usuario', 'Acceso básico al sistema, ver y realizar tareas específicas.'),
+('Supervisor', 'Gestión de usuarios, roles y permisos, no tiene acceso a la configuración del sistema.'),
+('Editor', 'Creación, edición y eliminación de contenido.'),
+('Reportero', 'Creación y edición de contenido, pero no la eliminación.'),
+('Analista', 'Visualización y análisis de datos del sistema.'),
+('Auditor', 'Auditoría del sistema para la seguridad y el cumplimiento de las normas.');
+
+INSERT INTO Gabinete (nombre)
+VALUES ('Ciudad'),
+('Social y de Resutados'),
+('Legal y de Planeación'),
+('Administrativo Financiero'),
+('Atención a Grupos Especiales'),
+('Atención Ciudadana'),
+('Defensoría de los Derechos Humanos');
+
+INSERT INTO Rendimiento (Fecha,Resueltos,Pendientes,Rendimiento)
+VALUES (CURDATE(),0,0,0);
+
+** DIrecciones - Gabinete de la ciudad **
+INSERT INTO Direccion (Id_Gabinete,Id_Rendimiento,Nombre)
+VALUES 
+(1,1,'Obras Públicas'),
+(1,1,'Servicios Públicos'),
+(1,1,'OPDAPAS'),
+(1,1,'Gerencia de la Ciudad'),
+(1,1,'Medio Ambiente'),
+(1,1,'Desarrollo Urbano y Metropolitano');
+
+** SubDirecciones de Obras Publicas **
+INSERT INTO SubDireccion (Id_Direccion,Nombre)
+VALUES 
+(1,'Secretaría Tecnica'),
+(1,'Unidad de Obra Pública'),
+(1,'Coordinación de Obras'),
+(1,'Unidad de Programación y Control Presupuestal'),
+(1,'Construcción, Supervición y Conservación'),
+(1,'Proyectos y Normatividad de Obra');
+
+** Jefatura de SubDirecciones **
+INSERT INTO Jefatura (Id_SubDireccion,Nombre)
+VALUES 
+(1,'Departamento de Construcción y Supervición de Obra'),
+(1,'Departamento de Conservación'),
+(1,'Departamento de Estudios, Proyectos y Presupuestos'),
+(1,'Departamento de Concursos, Contratos y Estimaciones');
+
+INSERT INTO Procedencia (Tipo)
+VALUES
+("Oficio"),
+("Redes Sociales"),
+("Pagina de Internet");
+
+INSERT INTO Prioridad (Nombre)
+VALUES
+("Menor"),
+("Normal"),
+("Alta");
+
+INSERT INTO Estatus (Estado, Descripcion)
+VALUES
+("Pendiente", "Está pendiente de abordar."),
+("En progreso", "Se encuentra en proceso de resolución."),
+("Completado", "Ha sido resuelto satisfactoriamente."),
+("Cancelado", "Ha sido cancelado y no se continuará con su resolución.");
+
+INSERT INTO CategoriaAsunto (Categoria) 
+VALUES 
+    ('Servicios Públicos'),
+    ('Obras Públicas'),
+    ('Seguridad Pública'),
+    ('Atención Ciudadana'),
+    ('Desarrollo Urbano');
+
+INSERT INTO Servicio (Nombre, Descripcion, Id_Categoria) 
+VALUES 
+    ('Solicitud de recolección de basura', 'Solicitud para la recolección de desechos sólidos urbanos.', 1),
+    ('Reportes de alumbrado público dañado', 'Reportes sobre luminarias que necesitan reparación o mantenimiento.', 1),
+    ('Solicitud de mantenimiento de calles y aceras', 'Solicitud para el mantenimiento y reparación de calles y aceras.', 1),
+    ('Quejas sobre el suministro de agua potable', 'Reportes de problemas o quejas sobre el suministro de agua potable.', 1),
+    ('Solicitud de poda de árboles o mantenimiento de áreas verdes', 'Solicitud para poda de árboles o mantenimiento de áreas verdes.', 1),
+    ('Solicitud de permisos de construcción', 'Solicitud para obtener permisos de construcción.', 2),
+    ('Solicitudes de licencias para abrir un negocio', 'Solicitud para obtener licencias para abrir un negocio.', 2),
+    ('Solicitud de permisos para eventos comunitarios o reuniones', 'Solicitud para obtener permisos para eventos comunitarios o reuniones.', 2),
+    ('Solicitudes de licencias de conducción o registro de vehículos', 'Solicitud para obtener licencias de conducción o registro de vehículos.', 2),
+    ('Reportes de ruido excesivo o molestias vecinales', 'Reportes sobre ruido excesivo o molestias vecinales.', 3),
+    ('Denuncias de vandalismo o grafitis', 'Denuncias sobre vandalismo o grafitis en espacios públicos.', 3),
+    ('Quejas sobre el estacionamiento ilegal o peligroso', 'Quejas sobre el estacionamiento ilegal o peligroso.', 3),
+    ('Reportes de problemas de seguridad en parques públicos o áreas comunes', 'Reportes de problemas de seguridad en parques públicos o áreas comunes.', 3),
+    ('Solicitudes de ayuda social, como subsidios de vivienda o alimentos', 'Solicitudes de ayuda social, como subsidios de vivienda o alimentos.', 4),
+    ('Quejas sobre problemas de convivencia en vecindarios', 'Quejas sobre problemas de convivencia en vecindarios.', 4),
+    ('Solicitud de apoyo para programas educativos o culturales', 'Solicitud de apoyo para programas educativos o culturales.', 4),
+    ('Denuncias de maltrato animal o solicitudes de adopción', 'Denuncias de maltrato animal o solicitudes de adopción.', 4),
+    ('Reportes de contaminación del aire o del agua', 'Reportes de contaminación del aire o del agua.', 5),
+    ('Solicitud de desinfección o control de plagas', 'Solicitud de desinfección o control de plagas.', 5),
+    ('Quejas sobre la falta de higiene en establecimientos comerciales', 'Quejas sobre la falta de higiene en establecimientos comerciales.', 5),
+    ('Solicitudes de información sobre programas de reciclaje o conservación', 'Solicitudes de información sobre programas de reciclaje o conservación.', 5);
+
+
+INSERT INTO datosusuario  (nombre,apellidoP,apellidoM, usuario, contrasenia, telefono)
+VALUES ('Diego','Garces','Morales', 'DimitryGarces', '3$6^#F%d$', '7224998939');
+
+INSERT INTO Usuario (Id_DatosU, Id_Rol)
+VALUES (1, 16);
+
+//Datos de prueba
+INSERT INTO datosusuario  (nombre,apellidoP,apellidoM, usuario, contrasenia, telefono)
+VALUES 
+('Direcc','Prueba','Prueba', 'PruebaGarces', '12345678', '7224998938'),
+('SubDirec','Prueba','Prueba', 'PruebaGarce', '12345678', '7224998937'),
+('Jefatura','Prueba','Prueba', 'PruebaGarc', '12345678', '7224998936');
+
+INSERT INTO Usuario (Id_DatosU, Id_Rol, reloginDigest)
+VALUES
+(2, 16, null),
+(3, 16, null),
+(4, 16, null);
+
+INSERT INTO EmpleadoDirec(Id_Direc,Id_Usuario)
+VALUES
+(1,1);
+
+INSERT INTO EmpleadoSubDirec(Id_Direc,Id_Usuario)
+VALUES
+(1,2);
+
+INSERT INTO EmpleadoJefatura(Id_Direc,Id_Usuario)
+VALUES
+(1,3),
+(1,4);
+
+** Vistas Generaless ** 
+CREATE VIEW UsuarioGeneral AS
+SELECT du.nombre AS Nombre, du.usuario as Usuario, d.nombre AS Direccion
+FROM datosusuario du
+INNER JOIN usuario u ON u.Id_DatosU = du.Id_DatosU
+INNER JOIN empleadodirec e ON e.Id_Usuario = u.Id_Usuario
+INNER JOIN direccion d ON d.Id_Direccion = e.Id_Direc;
+
+CREATE VIEW UsuarioSubDirec AS
+SELECT du.nombre AS Nombre, du.usuario as Usuario, d.nombre AS SubDireccion
+FROM datosusuario du
+INNER JOIN usuario u ON u.Id_DatosU = du.Id_DatosU
+INNER JOIN empleadosubdirec e ON e.Id_Usuario = u.Id_Usuario
+INNER JOIN subdireccion d ON d.Id_subDireccion = e.Id_SubDirec;
+
+CREATE VIEW UsuarioJefatura AS
+SELECT du.nombre AS Nombre, du.usuario as Usuario, j.nombre AS Jefatura
+FROM datosusuario du
+INNER JOIN usuario u ON u.Id_DatosU = du.Id_DatosU
+INNER JOIN empleadojefatura e ON e.Id_Usuario = u.Id_Usuario
+INNER JOIN Jefatura j ON j.Id_Jefatura = e.Id_Jefatura;
+
+SELECT Nombre, Usuario, Dirección FROM UsuarioGeneral;
+
+REFRESH VIEW UsuarioGeneral;
+REFRESH VIEW UsuarioSubDirec;
+REFRESH VIEW UsuarioJefatura;
+
+

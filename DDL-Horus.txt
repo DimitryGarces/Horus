@@ -37,6 +37,8 @@ FOREIGN KEY (Id_SubDireccion) REFERENCES SubDireccion(Id_SubDireccion)
 CREATE TABLE DatosUsuario(
 Id_DatosU INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 Nombre VARCHAR (60) NOT NULL,
+ApellidoP VARCHAR (60) NOT NULL,
+ApellidoM VARCHAR (60) NOT NULL,
 Usuario VARCHAR (15) NOT NULL,
 Contrasenia VARCHAR (12) NOT NULL,
 Telefono VARCHAR (10) NOT NULL
@@ -52,6 +54,7 @@ CREATE TABLE Usuario(
 Id_Usuario INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 Id_DatosU INT UNSIGNED,
 Id_Rol TINYINT UNSIGNED,
+reloginDigest VARCHAR(255),
 FOREIGN KEY (Id_DatosU) REFERENCES DatosUsuario(Id_DatosU),
 FOREIGN KEY (Id_Rol) REFERENCES Rol(Id_Rol)
 );
@@ -79,7 +82,7 @@ FOREIGN KEY (Id_Jefatura) REFERENCES Jefatura(Id_Jefatura)
 
 CREATE TABLE Prioridad(
 Id_Prioridad TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-Path VARCHAR (200) NOT NULL
+Nombre VARCHAR (50) NOT NULL
 );
 
 CREATE TABLE Estatus(
@@ -93,6 +96,18 @@ Id_Procedencia TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 Tipo VARCHAR (35) NOT NULL
 );
 
+CREATE TABLE CategoriaAsunto(
+    Id_Categoria TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    Categoria VARCHAR(30)
+);
+
+CREATE TABLE Servicio (
+    Id_Servicio INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(200) NOT NULL,
+    Descripcion VARCHAR(200),
+    Id_Categoria TINYINT UNSIGNED,
+    FOREIGN KEY (Id_Categoria) REFERENCES CategoriaAsunto(Id_Categoria)
+);
 
 CREATE TABLE Situacion(
 Folio INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -105,6 +120,8 @@ Fecha_Recibida DATE NOT NULL,
 Fecha_Vencimiento DATE NOT NULL,
 Fecha_Finalizacion DATE,
 Path VARCHAR(200) NOT NULL,
+Id_Servicio INT UNSIGNED,
+FOREIGN KEY (Id_Servicio) REFERENCES Servicio (Id_Servicio),
 FOREIGN KEY (Id_Prioridad) REFERENCES Prioridad(Id_Prioridad),
 FOREIGN KEY (Id_Estatus) REFERENCES Estatus(Id_Estatus),
 FOREIGN KEY (Id_Procedencia) REFERENCES Procedencia(Id_Procedencia)
