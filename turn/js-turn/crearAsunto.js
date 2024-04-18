@@ -1,5 +1,6 @@
 // Obtener el contenedor donde se insertarán los elementos
-var container = document.querySelector(".turn");
+var container = document.querySelector(".crear");
+var con = document.querySelector(".turnar");
 var documento = "asuntos/";
 // Crear una cadena de texto HTML que contenga los elementos del formulario
 var formHTML = `
@@ -57,9 +58,12 @@ var formHTML = `
 </div>
 `;
 
+var turnHTML = `
+
+`;
 // Insertar la cadena de texto HTML en el contenedor
 container.innerHTML = formHTML;
-
+con.innerHTML = turnHTML;
 // Vincular el evento de envío después de insertar el formulario en el documento
 var form = document.getElementById("formulario");
 form.addEventListener("submit", handleSubmit);
@@ -149,6 +153,5 @@ function handleSubmit(event) {
     .catch(error => {
         console.error('Error al enviar los datos:', error);
     });
-    
-
 }
+

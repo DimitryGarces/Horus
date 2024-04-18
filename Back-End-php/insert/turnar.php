@@ -4,20 +4,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Incluir el archivo de conexión a la base de datos
     include('../includes/db.php');
 
-    // Obtener los datos del formulario
-    $asunto = $_POST['asunto'];
-    $remitente = $_POST['remitente'];
-    $procedencia = $_POST['procedencia'];
-    $fechaRecibida = $_POST['fechaRecibida'];
-    $fechaVencimiento = $_POST['fechaVencimiento'];
-    $prioridad = $_POST['prioridad'];
-    $documento = $_POST['documento'];
-    $servicio = $_POST['idServicio'];
+    // Obtener los datos del formulario y de la sesion
+    $idusuario = $_SESSION['id'];
     $folio = $_POST['folio'];
+    $instrucciones = $_POST['instrucciones'];
+    $fechagen = $_POST['fechagen'];
 
     // Definir la consulta SQL para insertar los datos en la tabla Situacion
-    $sql = "INSERT INTO Situacion (Id_Prioridad, Id_Estatus, Id_Procedencia, Remitente, Asunto, Fecha_Recibida, Fecha_Vencimiento, Path,Id_Servicio, FolioGen) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO Turno (Id_UsuarioEnvia, Folio, Instrucciones, FechaGenerada) 
+            VALUES (?, ?, ?, ?)";
 
     // Preparar la consulta
     $stmt = mysqli_prepare($con, $sql);
@@ -27,13 +22,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Vincular los parámetros
     // Vincular los parámetros
-    mysqli_stmt_bind_param($stmt, "iiisssssis", $prioridad, $idEstatus, $procedencia, $remitente, $asunto, $fechaRecibida, $fechaVencimiento, $documento, $servicio, $folio);
+    mysqli_stmt_bind_param($stmt, "iiss", $idusuario, $folio, $instrucciones, $fechagen);
 
     // Ejecutar la consulta
     if (mysqli_stmt_execute($stmt)) {
         // La inserción fue exitosa
         header('Content-Type: application/json');
-        echo json_encode(array('success' => true, 'id' => mysqli_insert_id($con)));
+        echo json_encode(array('success' => true));
     } else {
         // Error en la ejecución de la consulta
         header('Content-Type: application/json');
@@ -48,3 +43,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header('Content-Type: application/json');
     echo json_encode(array('success' => false, 'message' => 'No se recibieron datos POST'));
 }
+?>
