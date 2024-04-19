@@ -1,0 +1,97 @@
+@media (min-width: 451px) {
+
+    /* Oculta la barra de desplazamiento en Firefox */
+    ::-webkit-scrollbar {
+        width: 0px;
+    }
+
+    /* Oculta la barra de desplazamiento horizontal en Firefox */
+    @-moz-document url-prefix() {
+        body {
+            overflow-x: hidden;
+        }
+    }
+
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: clamp(30px, 30vw, 80px);
+        background-color: #343a40;
+        padding-top: 20px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    /* width */
+    .sidebar::-webkit-scrollbar {
+        width: 0px;
+        scrollbar-width: none;
+    }
+
+    /* Track */
+    .sidebar::-webkit-scrollbar-track {
+        background: none;
+    }
+
+    /* Handle */
+    .sidebar::-webkit-scrollbar-thumb {
+        background: none;
+    }
+
+    /* Handle on hover */
+    .sidebar::-webkit-scrollbar-thumb:hover {
+        background: none;
+    }
+
+    /* Opcional: cambia el color de fondo de la pista */
+    .sidebar::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    /* Opcional: cambia el color de la barra de desplazamiento */
+    .sidebar::-webkit-scrollbar-thumb {
+        background: transparent;
+    }
+
+    .nav-link {
+        font-size: 0;
+        padding-left: 0;
+    }
+
+    .nav-link img {
+        width: clamp(30px, 30vw, 80px);
+        width: auto;
+        max-width: 80px;
+        margin-left: clamp(0px, 30vw, 10px);
+    }
+
+    .nav-link-text {
+        visibility: hidden;
+    }
+
+    .sidebar ul li {
+        width: clamp(30px, 30vw, 60px);
+        height: auto;
+        margin-right: 0px;
+    }
+
+    /*Control del contenido INICIO*/
+    .direccion h3 {
+        padding-top: 15px;
+        padding-left: 20px;
+        font-size: clamp(1rem, 4vw, 3rem);
+    }
+
+    .logo {
+        width: clamp(20px, 20vw, 80px);
+        /* Establece el ancho entre 20px y 45px */
+        max-width: 200px;
+        /* Establece el ancho máximo en 45px */
+        height: 50px;
+        /* Permite que la altura se ajuste automáticamente según el ancho */
+        margin-top: 10px;
+    }
+}

@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', function () {
               const usuarioData = {
                 id_usuario: datos[0],
                 nombre: datos[1],
-                usuario: datos[2],
-                area: datos[3]
+                usuario: usuario,
+                area: datos[2]
               };
               cookie(usuarioData);
             } else {

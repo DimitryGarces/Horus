@@ -1,0 +1,333 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Gotham", sans-serif;
+  font-size: 13px;
+  color: #999;
+  margin: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 90vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0; /* Agregado para asegurar que no haya relleno en el cuerpo */
+}
+.logo-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 10px;
+}
+
+.logo {
+  width: 25vw; /* Ajusta el tamaño del logo según tus necesidades */
+}
+header {
+  margin-bottom: 0; /* Agregado para asegurar que no haya margen inferior en el encabezado */
+}
+
+
+.ftco-section {
+  flex-grow: 1;
+}
+
+input,
+textarea,
+select {
+  font-family: "Gotham", sans-serif;
+  font-size: 13px;
+  color: #666;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+:focus {
+  outline: none;
+}
+
+.wrapper {
+  min-height: 100vh;
+  position: relative;
+  /*background: url("../images/bg-registration-form-9.jpg") no-repeat right center;*/
+  background-size: cover;
+}
+
+.inner {
+  position: absolute;
+  top: 50%;
+  left: 11.07%;
+  transform: translateY(-50%);
+  width: 520px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  /*background: url("../images/bg-inner.png") repeat;*/
+  padding: 7px;
+}
+
+form {
+  width: 100%;
+  padding: 57px 46px 55px;
+  background: #fff;
+}
+
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+h3 {
+  text-transform: uppercase;
+  font-size: 35px;
+  font-family: "Gotham", sans-serif;
+  color: #2c2a2a;
+  letter-spacing: 3px;
+  margin-bottom: 22px;
+  font-weight: 500;
+}
+
+.form-row {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.form-row.last {
+  margin-bottom: 22px;
+}
+
+.form-row .form-wrapper {
+  width: 50%;
+}
+
+.form-row .form-wrapper:first-child {
+  margin-right: 25px;
+}
+
+.form-wrapper {
+  position: relative;
+}
+
+.form-wrapper label {
+  display: block;
+  font-family: "Gotham", sans-serif;
+  font-size: 17px;
+  color: #4c4c4c;
+  margin-bottom: 8px;
+}
+
+.form-wrapper i.zmdi-chevron-down {
+  position: absolute;
+  right: 16px;
+  top: 42px;
+  font-size: 15px;
+  color: #666;
+}
+
+.form-wrapper span.lnr-calendar-full {
+  position: absolute;
+  left: 16px;
+  font-size: 15px;
+  color: #666;
+  top: 43px;
+}
+
+.form-control {
+  border: 1px solid #e6e6e6;
+  display: block;
+  width: 100%;
+  height: 42px;
+  padding: 0 14px;
+}
+
+.form-control.datepicker-here {
+  padding-left: 39px;
+}
+
+.checkbox {
+  position: relative;
+  padding-left: 22px;
+}
+
+.checkbox label {
+  cursor: pointer;
+}
+
+.checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkbox input:checked~.checkmark:after {
+  display: block;
+}
+
+.checkmark {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  height: 12px;
+  width: 13px;
+  border-radius: 2px;
+  background-color: #ebebeb;
+  border: 1px solid #ccc;
+  font-family: Material-Design-Iconic-Font;
+  font-size: 10px;
+  font-weight: bolder;
+}
+
+.checkmark:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  content: '\f26b';
+  color: #333;
+}
+#loginButton {
+  border: none;
+  width: 173px;
+  height: 42px;
+  margin-top: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: #3ec3fd; /* Mismo color que el fondo del formulario */
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Gotham", sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+
+#loginButton span {
+  letter-spacing: 3px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+#loginButton:after {
+  content: attr(data-text);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 0;
+  opacity: 0;
+  letter-spacing: 3px;
+  -webkit-transform: translate(-30%, -25%);
+  transform: translate(-30%, -25%);
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+#loginButton:hover {
+  background: #0072fd;
+}
+
+#loginButton:hover span {
+  opacity: 0;
+  -webkit-transform: translate(0px, 40px);
+  transform: translate(0px, 40px);
+}
+
+#loginButton:hover:after {
+  opacity: 1;
+  -webkit-transform: translate(0, -25%);
+  transform: translate(0, -25%);
+}
+
+@media (max-width: 2500px) {
+  .wrapper {
+    background-position: center center;
+  }
+  .inner {
+    width: 50%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .inner {
+    width: 70%;
+  }
+}
+
+@media (max-width: 800px) {
+  .inner {
+    width: 100%;
+    transform: translateY(0);
+    position: static;
+    padding: 0;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none;
+  }
+
+  .wrapper {
+    background: none;
+    display: block;
+  }
+
+  form {
+    padding: 30px 20px;
+  }
+
+  .form-row {
+    display: block;
+  }
+
+  .form-row .form-wrapper {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+  .form-row .form-wrapper:first-child {
+    margin-right: 0;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

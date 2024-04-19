@@ -4,112 +4,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú Lateral con Bootstrap</title>
+    <title>Principal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/styleSlide.css">
+    <link rel="stylesheet" href="./css/slidebar.css">
+    <link rel="stylesheet" href="./css/celulares.css">
+    <link rel="stylesheet" href="./css/laptops.css">
+
 </head>
 
 <body>
 
     <div class="container-fluid">
         <div class="row">
-            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+            <nav id="sidebarMenu" class="col-sm-1 col-md-2 col-lg-2 col-xl-2 d-md-block bg-light sidebar">
                 <div class="position-sticky">
                     <ul class="nav flex-column">
-                        <h2 class="userName"></h2>
                         <li>
-                            <hr class="dropdown-divider-dark">
+                            <h1 class="userName gradient-text"></h1>
                         </li>
+                        <hr class="dropdown-divider-dark">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" data-bs-toggle="tab" href="#inicio">
-                                <img src="../img/pgPrincipal.png" alt="Inicio"> Inicio
+                                <img src="../img/iconHORUS.png" alt="Inicio">
+                                <span class="nav-link-text">Inicio</span>
                             </a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="tab" href="#Bandeja">
-                                <img src="../img/bdEntrada.png" alt="Bandeja de Entrada"> Bandeja de Entrada
+                                <img src="../img/bdEntrada.png" alt="Bandeja de Entrada"><span
+                                    class="nav-link-text">Bandeja de Entrada</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="tab" href="#Busqueda">
-                                <img src="../img/buscar.png" alt="Busqueda"> Busqueda
+                                <img src="../img/buscar.png" alt="Busqueda"><span class="nav-link-text">Busqueda</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="tab" href="#AC">
-                                <img src="../img/atc.png" alt="Atención Ciudadana"> Atención Ciudadana
+                                <img src="../img/atc.png" alt="Atención Ciudadana"><span class="nav-link-text">Atención
+                                    Ciudadana</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="tab" href="#HORUS">
-                                <img src="../img/pgPrincipal.png" alt="HORUS"> HORUS
+                                <img src="../img/na.png" alt="HORUS"><span class="nav-link-text">HORUS</span>
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="tab" href="#Historial">
-                                <img src="../img/historial.png" alt="Historial"> Historial
+                                <img src="../img/historial.png" alt="Historial"><span
+                                    class="nav-link-text">Historial</span>
                             </a>
                         </li>
                         <li class="nav-item salir">
                             <a class="nav-link" data-bs-toggle="tab" href="#">
-                                <img src="../img/cs.png" alt="Salir"> Cerrar Sesión
+                                <img src="../img/cs.png" alt="Salir"><span class="nav-link-text">Cerrar Sesión</span>
                             </a>
                         </li>
                     </ul>
                 </div>
             </nav>
 
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <main class="col-sm-12 col-md-12 col-lg-12 col-xl-12 principal">
                 <div class="tab-content">
                     <div class="tab-pane fade show active" id="inicio">
                         <div class="container">
-                            <div class="row">
+                            <div class="row shadow">
                                 <div class="col d-flex justify-content-center">
-                                    <div>
-                                        <h1 class="direccion"></h1>
+                                    <div class="direccion gradient-title">
                                     </div>
                                 </div>
-                                <div class="col d-flex justify-content-end">
-                                    <img src="../img/horus.jpg" alt="Horus" class="img-fluid"
-                                        style="max-width: 300px; height: auto; margin-top: auto;">
+                                <div class="col d-flex justify-content-end logo">
+                                    <img src="../img/horus.jpg" alt="Horus" class="img-fluid">
                                 </div>
                             </div>
-                            <div class="row mt-4 mb-4">
+                            <div class="row mt-4 mb-4 shadow">
                                 <!-- Gráfica de Barras -->
-                                <div class="col-sm-6 col-md-6 col-lg-6">
+                                <div class="col-sm-6 col-md-6 col-lg-5 col-xl-5">
                                     <div id="myChart"></div>
                                 </div>
                                 <!-- Gráfica de Dona -->
-                                <div class="col-sm-6 col-md-6 col-lg-6 d-flex justify-content-center">
+                                <div class="col-sm-6 col-md-6 col-lg-5 col-xl-5">
                                     <div id="myDoughnutChart"></div>
                                 </div>
                             </div>
-                            <div class="row mt-4 mb-4">
-                                <div class="col-md-7">
+                            <div class="row mt-4 mb-4 shadow">
+                                <div class="col-sm-10 col-md-10 col-lg-10 col-xl-9">
                                     <div id="myLineChart"></div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                     <div class="tab-pane fade" id="Bandeja">
-                        <h1>Contenido de Productos</h1>
-                        <p>Aquí puedes mostrar los productos disponibles.</p>
+                        <div class="container">
+
+                        </div>
                     </div>
                     <div class="tab-pane fade" id="Busqueda">
                         <div class="container-fluid mt-3">
-                            <div class="input-group mb-3">
-                                <span id="buscarTxt" class="input-group-text" id="basic-addon1">
-                                    <img src="../img/busqueda.png" alt="Buscar">
-                                </span>
-                                <select id="turnadoA" class="form-select" aria-label="Default select example">
-                                    <option selected>Turnado a</option>
-                                </select>
-                            </div>
-
-                            <div class="input-group-append mt-1">
-                                <button id="btnBuscar" class="btn btn-outline-secondary" type="button">Filtros</button>
+                            <div class="row">
+                                <div class="col-sm-1 col-md-2 col-lg-3 col-xl-3"></div>
+                                <div class="col-sm-4 col-md-4 col-lg-6 col-xl-6 d-flex justify-content-center">
+                                    <div class="col-5 input-group mb-3">
+                                        <span id="buscarTxt" class="input-group-text" id="basic-addon1">
+                                            <img src="../img/busqueda.png" alt="Buscar">
+                                        </span>
+                                        <select id="turnadoA" class="form-select" aria-label="Default select example">
+                                            <option selected>Turnado a</option>
+                                        </select>
+                                        <div class="input-group-append mt-1">
+                                            <button id="btnBuscar" class="btn btn-outline-secondary" type="button">Filtros</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="container mt-5">
@@ -126,9 +136,13 @@
                             </div>
                         </div>
                     </div>
+                    
+
                     <div class="tab-pane fade" id="AC">
-                        <h1>Acerca de</h1>
-                        <p>Información sobre tu empresa o proyecto.</p>
+                        <div class="container">
+                            <h1>Acerca de</h1>
+                            <p>Información sobre tu empresa o proyecto.</p>
+                        </div>
                     </div>
                     <div class="tab-pane fade" id="HORUS">
                         <div class="crear">
@@ -137,8 +151,10 @@
                         </div>
                     </div>
                     <div class="tab-pane fade" id="Historial">
-                        <h1>Contacto</h1>
-                        <p>Formulario de contacto o información de contacto.</p>
+                        <div class="container-fluid">
+                            <h1>Contacto</h1>
+                            <p>Formulario de contacto o información de contacto.</p>
+                        </div>
                     </div>
                 </div>
             </main>
@@ -150,10 +166,8 @@
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="./js/container.js"></script>
     <script src="./js/accionesDirec.js"></script>
-    <script src="./js/recuperaUser.js"></script>
     <script src="./js/tituloDinam.js"></script>
     <script src="./js-sesion/logOut.js"></script>
-
 </body>
 
 </html>

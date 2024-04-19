@@ -1,0 +1,49 @@
+@media (max-width: 450px) {
+    /*Control del SLIDEBAR*/
+    .sidebar {
+        position: relative;
+        width: 100%;
+        padding-top: 0;
+    }
+    .sidebar ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    .sidebar ul li {
+        padding: clamp(0.5px, 3vw, 1px);
+    }
+    
+    .tab-content {
+        padding: 20px;
+    }
+    
+    .nav-link img {
+        width: 10vw;
+        max-width: 40px; 
+        height: auto; 
+        margin-right: 10px;
+    }
+    .nav-link {
+        font-size: clamp(1rem, 5vw, 5rem);
+    }
+    .userName {
+        visibility: visible;
+    }
+    .logo{
+        width: clamp(10rem, 25vw, 40rem);
+        height: 45px; 
+        margin-top: 0px;
+    }
+    .direccion h1 h3 h4 {
+        padding-top: 15px;
+        font-size: 4vw;
+        font-weight: bold;
+        font-family: 'Gotham', sans-serif;
+    }
+    .direccion h3 {
+        font-size: clamp(1rem, 4vw, 3rem);
+    }
+    
+
+}

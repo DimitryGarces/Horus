@@ -1,0 +1,61 @@
+@import url('https://cdn.rawgit.com/mfd/f3d96ec7f0e8f034cc22ea73b3797b59/raw/856f1dbb8d807aabceb80b6d4f94b464df461b3e/gotham.css');
+
+/* Aplicar la fuente Gotham a todos los elementos de texto */
+body {
+    font-family: 'Gotham', sans-serif;
+}
+.f {
+    height: 100%; /* 100% de la altura de la ventana */
+}
+/*
+.sidebar h2 {
+    text-align: center;
+     //Centra el texto horizontalmente 
+    color: black;
+}
+*/
+.sidebar ul li {
+    transition: border-radius 0.3s ease;
+    background-color: transparent;
+}
+
+.sidebar ul li:hover {
+    background-color: rgba(13, 77, 123, 0.4);
+    border-radius: 15px;
+}
+
+.sidebar ul li .nav-link.active,
+.sidebar ul li .nav-link:focus,
+.sidebar ul li .nav-link:active {
+    background-image: linear-gradient(to bottom, rgba(13, 77, 123, 0.9), rgba(112, 89, 131, 0.9));
+    box-shadow: 0 0 0px rgba(161, 163, 186, 0.5);
+    border-radius: 5px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar ul li a.nav-link {
+    color: black;
+}
+
+.nav-item {
+    margin-bottom: 1vh;
+}
+
+.gradient-text {
+    background-image: linear-gradient(to bottom, rgba(13, 77, 123), rgba(112, 89, 131));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+}
+
+.gradient-title {
+    background-image: linear-gradient(to right, #ff7e5f,  #4aa0ff, #1d60a8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
