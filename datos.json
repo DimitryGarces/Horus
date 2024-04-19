@@ -132,12 +132,19 @@
                 "Resueltos": 4.0,
                 "Pendientes": 0.0,
                 "Rendimiento": 100.0
+            },
+            {
+                "Direccion": "Defensoria_Municipal_de_los_Derechos_Humanos",
+                "Resueltos": 2.0,
+                "Pendientes": 2.0,
+                "Rendimiento": 50.0
             }
+
         ],
         "Resumen": {
-            "Resueltos_totales": 68.0,
-            "Pendientes_totales": 27.0,
-            "Rendimiento_general": 71.58
+            "Resueltos_totales": 70.0,
+            "Pendientes_totales": 29.0,
+            "Rendimiento_general": 70
         }
     },
     "Administrativo_Financiero": {
@@ -186,36 +193,6 @@
             "Resueltos_totales": 26.0,
             "Pendientes_totales": 1.0,
             "Rendimiento_general": 96.3
-        }
-    },
-    "Atencion_Ciudadana": {
-        "Direcciones": [
-            {
-                "Direccion": "Atencion_Ciudadana",
-                "Resueltos": 0,
-                "Pendientes": 0,
-                "Rendimiento": 0
-            }
-        ],
-        "Resumen": {
-            "Resueltos_totales": 0,
-            "Pendientes_totales": 0,
-            "Rendimiento_general": 0
-        }
-    },
-    "Defensoria_Municipal_de_los_Derechos_Humanos": {
-        "Direcciones": [
-            {
-                "Direccion": "Defensoria_Municipal_de_los_Derechos_Humanos",
-                "Resueltos": 0,
-                "Pendientes": 0,
-                "Rendimiento": 0
-            }
-        ],
-        "Resumen": {
-            "Resueltos_totales": 0,
-            "Pendientes_totales": 0,
-            "Rendimiento_general": 0
         }
     }
 }

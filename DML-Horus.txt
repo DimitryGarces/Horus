@@ -159,4 +159,69 @@ REFRESH VIEW UsuarioGeneral;
 REFRESH VIEW UsuarioSubDirec;
 REFRESH VIEW UsuarioJefatura;
 
+DROP VIEW nombre_de_la_vista;
 
+CREATE OR REPLACE VIEW UsuarioCompleto AS
+SELECT 
+    u.Id_Usuario,
+    du.nombre AS Nombre,
+    du.usuario AS Usuario,
+    du.contrasenia AS Contrasenia,
+    d.nombre AS Direccion,
+    NULL AS SubDireccion,
+    NULL AS Jefatura
+FROM 
+    datosusuario du
+INNER JOIN 
+    usuario u ON u.Id_DatosU = du.Id_DatosU
+INNER JOIN 
+    empleadodirec e ON e.Id_Usuario = u.Id_Usuario
+INNER JOIN 
+    direccion d ON d.Id_Direccion = e.Id_Direc
+UNION ALL
+SELECT 
+    u.Id_Usuario,
+    du.nombre AS Nombre,
+    du.usuario AS Usuario,
+    du.contrasenia AS Contrasenia,
+    NULL AS Direccion,
+    sd.nombre AS SubDireccion,
+    NULL AS Jefatura
+FROM 
+    datosusuario du
+INNER JOIN 
+    usuario u ON u.Id_DatosU = du.Id_DatosU
+INNER JOIN 
+    empleadosubdirec es ON es.Id_Usuario = u.Id_Usuario
+INNER JOIN 
+    subdireccion sd ON sd.Id_subDireccion = es.Id_SubDirec
+UNION ALL
+SELECT 
+    u.Id_Usuario,
+    du.nombre AS Nombre,
+    du.usuario AS Usuario,
+    du.contrasenia AS Contrasenia,
+    NULL AS Direccion,
+    NULL AS SubDireccion,
+    j.nombre AS Jefatura
+FROM 
+    datosusuario du
+INNER JOIN 
+    usuario u ON u.Id_DatosU = du.Id_DatosU
+INNER JOIN 
+    empleadojefatura ej ON ej.Id_Usuario = u.Id_Usuario
+INNER JOIN 
+    jefatura j ON j.Id_Jefatura = ej.Id_Jefatura;
+
+
+
+SELECT 
+    Nombre,
+    Usuario,
+    CASE 
+        WHEN Direccion IS NOT NULL THEN CONCAT('Direccion: ', Direccion)
+        WHEN SubDireccion IS NOT NULL THEN CONCAT('SubDireccion: ', SubDireccion)
+        WHEN Jefatura IS NOT NULL THEN CONCAT('Jefatura: ', Jefatura)
+        ELSE 'Sin área asignada'
+    END AS Area
+FROM UsuarioCompleto;
