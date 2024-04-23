@@ -10,7 +10,7 @@ $resultado = mysqli_query($con, $sql);
 // Comprobar si hay resultados
 if (mysqli_num_rows($resultado) > 0) {
     // Iniciar el menú desplegable<select class="form-select form-select-sm" aria-label="Small select example">
-    echo '<select name="servicio" id="servicio">';
+    echo '<select class="form-control" name="servicio" id="servicio">';
     echo '<option selected>Elige el servicio más relacionado al asunto</option>';
     
     // Iterar sobre los resultados y generar las opciones del menú
