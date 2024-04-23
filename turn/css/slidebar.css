@@ -3,10 +3,26 @@
 /* Aplicar la fuente Gotham a todos los elementos de texto */
 body {
     font-family: 'Gotham', sans-serif;
+    /* Agregado para asegurar que no haya relleno en el cuerpo */
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* No se permitirá la selección de texto */
 }
+
 .f {
-    height: 100%; /* 100% de la altura de la ventana */
+    height: 100%;
+    /* 100% de la altura de la ventana */
 }
+
 /*
 .sidebar h2 {
     text-align: center;
@@ -54,7 +70,7 @@ body {
 }
 
 .gradient-title {
-    background-image: linear-gradient(to right, #ff7e5f,  #4aa0ff, #1d60a8);
+    background-image: linear-gradient(to right, #ff7e5f, #4aa0ff, #1d60a8);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;

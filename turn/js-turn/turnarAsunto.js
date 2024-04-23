@@ -22,7 +22,7 @@ var turnHTML = `
                     <legend>Instrucción General</legend>
                     <div class="container">
                         <div class="mb-3">
-                            <textarea class="form-control" id="msgGeneral" rows="3"></textarea>
+                            <textarea class="form-control gen" id="msgGeneral" rows="3"></textarea>
                         </div>
                     </div>
                 </fieldset>
@@ -75,7 +75,7 @@ function cargarOpciones() {
 
                 //Caja de texto para las instrucciones individuales
                 const textBox = document.createElement("textarea");
-                textBox.classList.add("form-control", "mb-2");
+                textBox.classList.add("form-control", "mb-2","gen");
                 textBox.setAttribute("placeholder", "Instrucción Individual");
                 textBox.setAttribute("aria-label", "Instrucción Individual");
                 textBox.setAttribute("id", `textBox-${resultado.Id}`);
