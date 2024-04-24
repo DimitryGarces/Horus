@@ -1,11 +1,10 @@
 <?php
+session_start();
+include('../includes/db.php');
 // Verificar si se reciben datos mediante POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Incluir el archivo de conexión a la base de datos
-    include('../includes/db.php');
 
-    // Obtener los datos del formulario y de la sesion
-    $idusuario = $_SESSION['id'];
+    $id_usuario = $_SESSION['id_usuario'];
     $folio = $_POST['folio'];
     $instrucciones = $_POST['instrucciones'];
     $fechagen = $_POST['fechagen'];
@@ -19,9 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Valor manual para Id_Estatus
     $idEstatus = 1;
-
-    // Vincular los parámetros
-    // Vincular los parámetros
     mysqli_stmt_bind_param($stmt, "iiss", $idusuario, $folio, $instrucciones, $fechagen);
 
     // Ejecutar la consulta

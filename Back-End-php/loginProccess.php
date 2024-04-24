@@ -15,14 +15,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         $sql = "SELECT 
             Id_Usuario,
-            Nombre,
-            Id_Secretaria,
-            CASE 
-                WHEN Direccion IS NOT NULL THEN Direccion
-                WHEN SubDireccion IS NOT NULL THEN SubDireccion
-                WHEN Jefatura IS NOT NULL THEN Jefatura
-                ELSE 'Sin área asignada'
-            END AS Area
+            Id_Departamento,
+            Id_DepSup,
+            Departamento,
+            Id_Tipo
         FROM UsuarioCompleto
         WHERE Usuario = ? 
         AND Contrasenia = ?";
@@ -31,19 +27,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         mysqli_stmt_bind_param($stmt, "ss", $nombre_usuario, $contrasena);
         mysqli_stmt_execute($stmt);
 
-        mysqli_stmt_bind_result($stmt, $id_usuario, $nombre, $id_secretaria, $area);
+        mysqli_stmt_bind_result($stmt, $id_usuario, $id_departamento,$id_depSup,$dep, $id_tipo);
         // **Verificación de existencia de usuario**
         if (mysqli_stmt_fetch($stmt)) {
             $_SESSION['usuario'] = array(
                 'id_usuario' => $id_usuario,
-                'nombre' => $nombre,
                 'usuario' => $nombre_usuario,
-                'id_secretaria' => $id_secretaria,
-                'area' => $area
+                'id_dep' => $id_departamento,
+                'id_depSup' => $id_depsup,
+                'dep' => $dep,
+                'id_tipo' => $id_tipo
             );
             $session_set = true;
-            echo $id_usuario . '-' . $nombre . '-' . $area;
-
+            echo $id_usuario . '-' . $nombre_usuario . '-' . $dep;
         } else {
             $session_set = false;
             echo 'Credenciales incorrectas. Intente nuevamente.';
@@ -69,28 +65,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (mysqli_stmt_fetch($stmt_cookie)) {
                 mysqli_stmt_close($stmt_cookie);
                 $sql_completo = "SELECT 
-                    Id_Usuario, 
-                    Nombre, 
-                    Id_Secretaria, 
-                    CASE 
-                        WHEN Direccion IS NOT NULL THEN Direccion 
-                        WHEN SubDireccion IS NOT NULL THEN SubDireccion 
-                        WHEN Jefatura IS NOT NULL THEN Jefatura 
-                        ELSE 'Sin área asignada' 
-                    END AS Area 
-                FROM UsuarioCompleto 
-                WHERE Usuario = ?";
+                Id_Usuario,
+                Id_Departamento,
+                Id_DepSup,
+                Departamento,
+                Id_Tipo
+                FROM UsuarioCompleto
+                WHERE Usuario = ? ";
                 $stmt_completo = mysqli_prepare($con, $sql_completo);
                 mysqli_stmt_bind_param($stmt_completo, "s", $usuario);
                 mysqli_stmt_execute($stmt_completo);
-                mysqli_stmt_bind_result($stmt_completo, $id_usuario, $nombre,$id_secretaria, $area);
+                mysqli_stmt_bind_result($stmt, $id_usuario, $id_departamento,$id_depSup,$dep, $id_tipo);
                 if (mysqli_stmt_fetch($stmt_completo)) {
                     $_SESSION['usuario'] = array(
                         'id_usuario' => $id_usuario,
-                        'nombre' => $nombre,
-                        'usuario' => $usuario,
-                        'id_secretaria' => $id_secretaria,
-                        'area' => $area
+                        'usuario' => $nombre_usuario,
+                        'id_dep' => $id_departamento,
+                        'id_depSup' => $id_depsup,
+                        'dep' => $dep,
+                        'id_tipo' => $id_tipo
                     );
                     $session_set = true;
                     echo json_encode(array('session_u' => true));

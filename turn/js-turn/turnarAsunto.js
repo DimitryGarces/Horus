@@ -156,11 +156,7 @@ function cargarOpciones() {
 function enviar(event) {
     $('#btnTurnarAsunto').prop('disabled', true);
     event.preventDefault();
-
-    // Obtener todos los checkboxes de opciones individuales seleccionados
     const checkboxesSeleccionados = document.querySelectorAll(".direcTurn input[type='checkbox']:checked");
-
-    // Array para almacenar la información de cada opción seleccionada
     const opcionesSeleccionadas = [];
 
     checkboxesSeleccionados.forEach(checkbox => {
