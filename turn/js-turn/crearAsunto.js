@@ -61,95 +61,10 @@ var formHTML = `
         <input type="file" class="form-control" id="documento" name="documento">
         <button class="btn btn-outline-secondary" type="button" id="btnSubirArchivo">Subir</button>
     </div>
-    <button type="submit" class="btn btn-primary mt-4" id="btnGuardarAsunto" disabled>Guardar Asunto</button>
+    <button type="button" class="btn btn-primary mt-4" id="btnGuardarAsunto" disabled>Guardar Asunto</button>
+    <button type="button" class="btn btn-primary mt-4" id="btnModificarAsunto" style="display: none;">Modificar Asunto</button>
 </form>
 </div>
 `;
-var scrTurn = document.createElement('script');
-scrTurn.src = "./js-turn/turnarAsunto.js";
-document.body.appendChild(scrTurn);
 container.innerHTML = formHTML;
-var form = document.getElementById("formulario");
-form.addEventListener("submit", handleSubmit);
-
-$(document).ready(function () {
-
-    $('#btnSubirArchivo').click(function () {
-        var formData = new FormData();
-        var fileInput = $('#documento')[0].files[0];
-        var folio = document.getElementById("folio").value;
-        formData.append('archivo', fileInput);
-        formData.append('folio', folio);
-
-
-        // Realizar la petición AJAX para subir el archivo
-        $.ajax({
-            url: '../Back-End-php/insert/subirPDF.php',
-            type: 'POST',
-            data: formData,
-            contentType: false,
-            processData: false,
-            success: function (response) {
-                if (response && response.nombre) {
-                    $('#btnGuardarAsunto').prop('disabled', false);
-                    documento += response.nombre;/*
-                    var scrTurn = document.createElement('script');
-                    scrTurn.src = "./js-turn/turnarAsunto.js";
-                    document.body.appendChild(scrTurn);*/
-                    console.log('Subida con éxito. Nombre del archivo:', documento);
-                } else {
-                    console.error('La respuesta del servidor no contiene el nombre del archivo.');
-                }
-            },
-            error: function (xhr, status, error) {
-                console.error('Error al subir el archivo:', error);
-            }
-        });
-    });
-});
-
-
-function handleSubmit(event) {
-    $('#btnSubirArchivo').prop('disabled', true);
-    event.preventDefault();
-
-    var asunto = document.getElementById("asunto").value;
-    var remitente = document.getElementById("remitente").value;
-    var procedencia = document.getElementById("procedencia").value;
-    var fechaRecibida = document.getElementById("fecha_recibida").value;
-    var fechaVencimiento = document.getElementById("fecha_vencimiento").value;
-    var prioridad = document.getElementById("prioridad").value;
-    var idServicio = document.getElementById("servicio").value;
-    var folio = document.getElementById("folio").value;
-
-    var formData = new FormData();
-
-    formData.append('asunto', asunto);
-    formData.append('remitente', remitente);
-    formData.append('procedencia', procedencia);
-    formData.append('fechaRecibida', fechaRecibida);
-    formData.append('fechaVencimiento', fechaVencimiento);
-    formData.append('prioridad', prioridad);
-    formData.append('idServicio', idServicio);
-    formData.append('documento', documento);
-    formData.append('folio', folio);
-
-    fetch('../Back-End-php/insert/nuevoAsunto.php', {
-        method: 'POST',
-        body: formData
-    })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Error al enviar los datos. Código de estado: ' + response.status);
-            }
-            return response.text();
-        })
-        .then(data => {
-            $('#btnSubirArchivo').prop('disabled', false);
-            console.log(data);
-        })
-        .catch(error => {
-            console.error('Error al enviar los datos:', error);
-        });
-}
 

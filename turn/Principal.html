@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/slidebar.css">
     <link rel="stylesheet" href="./css/celulares.css">
     <link rel="stylesheet" href="./css/laptops.css">
-
+    <link rel="stylesheet" href="./css/turn.css">
 </head>
 
 <body>
@@ -116,7 +116,8 @@
                                             <option selected>Turnado a</option>
                                         </select>
                                         <div class="input-group-append mt-1">
-                                            <button id="btnBuscar" class="btn btn-outline-secondary" type="button">Filtros</button>
+                                            <button id="btnBuscar" class="btn btn-outline-secondary"
+                                                type="button">Filtros</button>
                                         </div>
                                     </div>
                                 </div>
@@ -136,7 +137,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
 
                     <div class="tab-pane fade" id="AC">
                         <div class="container">
@@ -145,9 +146,39 @@
                         </div>
                     </div>
                     <div class="tab-pane fade" id="HORUS">
-                        <div class="crear">
-                        </div>
-                        <div class="turnar">
+                        <div class="container">
+                            <div class="row shadow">
+                                <div class="col d-flex justify-content-center">
+                                    <div class="gradient-title">
+                                        <h1>Registrar Nuevo Asunto</h1>
+                                    </div>
+                                </div>
+                                <div class="col d-flex justify-content-end logo">
+                                    <img src="../img/horus.jpg" alt="Horus" class="img-fluid">
+                                </div>
+                            </div>
+                            <div class="row mt-4 mb-4 shadow">
+                                <div class="crear">
+                                </div>
+                                <div class="accordion mt-4 mb-4" id="accordionExample">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                aria-expanded="false" aria-controls="collapseTwo">
+                                                Turnar
+                                            </button>
+                                        </h2>
+                                        <div id="collapseTwo" class="accordion-collapse collapse"
+                                            data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <div class="turnar">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="Historial">
