@@ -27,7 +27,7 @@ body {
 }
 
 .logo {
-  max-width: 300px; /* Ajusta el tamaño del logo según tus necesidades */
+  width: 25vw; /* Ajusta el tamaño del logo según tus necesidades */
 }
 header {
   margin-bottom: 0; /* Agregado para asegurar que no haya margen inferior en el encabezado */
@@ -77,7 +77,7 @@ a {
 .wrapper {
   min-height: 100vh;
   position: relative;
-  background: url("../images/bg-registration-form-9.jpg") no-repeat right center;
+  /*background: url("../images/bg-registration-form-9.jpg") no-repeat right center;*/
   background-size: cover;
 }
 
@@ -92,7 +92,7 @@ a {
   -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
   -ms-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
   -o-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
-  background: url("../images/bg-inner.png") repeat;
+  /*background: url("../images/bg-inner.png") repeat;*/
   padding: 7px;
 }
 
@@ -279,19 +279,22 @@ h3 {
   transform: translate(0, -25%);
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 2500px) {
   .wrapper {
     background-position: center center;
   }
-}
-
-@media (max-width: 991px) {
   .inner {
-    width: 60%;
+    width: 50%;
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1000px) {
+  .inner {
+    width: 70%;
+  }
+}
+
+@media (max-width: 800px) {
   .inner {
     width: 100%;
     transform: translateY(0);

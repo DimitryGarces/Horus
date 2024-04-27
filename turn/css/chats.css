@@ -1,0 +1,75 @@
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"] + label {
+    font-weight: 600;
+    color: #777777;
+    margin-bottom: 5px;
+    width: 100%;
+    float: left;
+    cursor: pointer;
+    padding: 0.6em; /* Ajusta el padding */
+    box-sizing: border-box;
+    background: #fff; /* Fondo blanco por defecto */
+    transition: background-color 0.3s; /* Transición para el cambio de color de fondo */
+    display: flex; /* Usar flexbox */
+    align-items: center; /* Centrar verticalmente */
+}
+
+input[type="radio"] + label:before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5em;
+    border: 2px solid #ccc;
+    background: #fff;
+    border-radius: 50%; /* Hacer un círculo */
+}
+
+input[type="radio"]:checked + label {
+    background: #ffffff; /* Fondo gris al hacer clic */
+}
+
+/* Estilos para tiempo "Tramite" */
+input[type="radio"].Tramite + label:before {
+    border-color: #ffc107; /* Amarillo */
+}
+input[type="radio"].Tramite:checked + label:before {
+    background: #ffc107; /* Amarillo */
+}
+
+/* Estilos para tiempo "Realizado" */
+input[type="radio"].Realizado + label:before {
+    border-color: #28a745; /* Verde */
+}
+input[type="radio"].Realizado:checked + label:before {
+    background: #28a745; /* Verde */
+}
+
+/* Estilos para tiempo "Pendiente" */
+input[type="radio"].Pendiente + label:before {
+    border-color: #dc3545; /* Rojo */
+}
+input[type="radio"].Pendiente:checked + label:before {
+    background: #dc3545; /* Rojo */
+}
+
+
+.background-image {
+    background-image: url('../../img/selecciona.png');
+    background-size: contain;
+    background-repeat: no-repeat; 
+    background-position: center;
+    height: clamp(20px, 20vw, 120px);
+    width: clamp(20px, 20vw, 120px);
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+}
+
+#contenido {
+    display: none; /* Oculta el segundo div por defecto */
+}
