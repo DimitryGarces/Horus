@@ -57,7 +57,6 @@ function verChat(pathPdf, fechaR, fechaV, indicacionGen, indicacionInd, depO, re
 }
 
 function inicio() {
-    console.log('Hola mundo')
     asunto = "Solicitud de Permiso";
     pathPdf = "../asuntos/011-26-04-2024.pdf";
     fechaR = "2024-04-26";

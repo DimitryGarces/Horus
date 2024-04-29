@@ -59,9 +59,8 @@ var formHTML = `
     </div>
     <div class="form-group input-group mt-3">
         <input type="file" class="form-control" id="documento" name="documento">
-        <button class="btn btn-outline-secondary" type="button" id="btnSubirArchivo">Subir</button>
     </div>
-    <button type="button" class="btn btn-primary mt-4" id="btnGuardarAsunto" disabled>Guardar Asunto</button>
+    <button type="button" class="btn btn-primary mt-4" id="btnGuardarAsunto">Guardar Asunto</button>
     <button type="button" class="btn btn-primary mt-4" id="btnModificarAsunto" style="display: none;">Modificar Asunto</button>
 </form>
 </div>

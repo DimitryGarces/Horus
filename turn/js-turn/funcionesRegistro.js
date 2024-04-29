@@ -1,4 +1,45 @@
 /*### Funciones auxiliares para funcionamiento del modulo ### */
+function CustomAlert() {
+    const dialogOverlay = document.createElement('div');
+    dialogOverlay.id = 'dialogoverlay';
+    dialogOverlay.style.display = 'none';
+    document.body.appendChild(dialogOverlay);
+
+    const dialogBox = document.createElement('div');
+    dialogBox.id = 'dialogbox';
+    dialogBox.className = 'slit-in-vertical';
+    dialogOverlay.appendChild(dialogBox);
+
+    const dialogBoxContent = document.createElement('div');
+    dialogBox.appendChild(dialogBoxContent);
+
+    const dialogBoxHead = document.createElement('div');
+    dialogBoxHead.id = 'dialogboxhead';
+    dialogBoxContent.appendChild(dialogBoxHead);
+
+    const dialogBoxBody = document.createElement('div');
+    dialogBoxBody.id = 'dialogboxbody';
+    dialogBoxContent.appendChild(dialogBoxBody);
+
+    const dialogBoxFoot = document.createElement('div');
+    dialogBoxFoot.id = 'dialogboxfoot';
+    dialogBoxContent.appendChild(dialogBoxFoot);
+
+    this.alert = function (message, title) {
+        dialogBoxHead.innerHTML = '<i class="fa fa-exclamation-circle" aria-hidden="true"></i> ' + title;
+        dialogBoxBody.innerHTML = message;
+        dialogBoxFoot.innerHTML = '<button class="pure-material-button-contained active" onclick="customAlert.ok()">Okay</button>';
+
+        dialogOverlay.style.display = 'block';
+        dialogBox.style.display = 'block';
+    };
+    this.ok = function () {
+        dialogOverlay.style.display = 'none';
+        dialogBox.style.display = 'none';
+    };
+}
+const customAlert = new CustomAlert();
+
 function smoothScrollTo(element, percentage) {
     const duration = 2500;
     const targetPosition = element.getBoundingClientRect().top * percentage;
@@ -42,6 +83,7 @@ function desactivar(bool) {
         });
     }
     tod.disabled = bool;
+    document.getElementById("errorText").style.display = "none";
 }
 /* En este metodo se obtienen las direcciones a las que se puede turnar de acuerdo a tu perfil */
 function cargarOpciones() {
@@ -119,26 +161,25 @@ function cargarOpciones() {
 
 /* En este codigo se encarga de subir el PDF al servidor */
 function subirPdf(formData) {
-    $.ajax({
-        url: '../Back-End-php/insert/subirPDF.php',
-        type: 'POST',
-        data: formData,
-        contentType: false,
-        processData: false,
-        success: function (response) {
-            if (response.nombre !== null) {
-                $('#btnGuardarAsunto').prop('disabled', false);
-                documento += response.nombre;
-                console.log('Subida con éxito. Nombre del archivo:', documento);
-            } else {
-                console.error('La respuesta del servidor no contiene el nombre del archivo.');
-            }
-        },
-        error: function (xhr, status, error) {
-            console.error('Error al subir el archivo:', error);
-        }
+    return new Promise((resolve, reject) => {
+        fetch('../Back-End-php/insert/subirPDF.php', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.nombre !== null) {
+                    resolve(data.nombre);
+                } else {
+                    reject('La respuesta del servidor no contiene el nombre del archivo.');
+                }
+            })
+            .catch(error => {
+                reject(error);
+            });
     });
 }
+
 
 /* SI NOS DAMOS CUENTA LAS SIGUIENTES 3 FUNCIONES SE REPITEN EN FUNCIONALIDAD, POR LO QUE SE PODRIA OPTIMIZAR EN EL FUTURO */
 /* Aqui se encarga de la logica necesaria para subir el nuevo asunto una vez se llenan todos los campos */
@@ -232,9 +273,6 @@ async function turnadoMasive(opcionesSeleccionadas) {
         return false; // Si alguna promesa se rechaza, devolver false
     }
 }
-
-
-
 function actualizarEstadoBoton() {
     const checkboxesIndividuales = document.querySelectorAll(".direcTurn input[type='checkbox']");
     const alMenosUnaSeleccionada = Array.from(checkboxesIndividuales).some(cb => cb.checked);
@@ -250,26 +288,39 @@ function actualizarEstadoTodas() {
 }
 
 /*##### Inicio de los metodos de inicializacion #####*/
-
 function after() {
     // Al cargar el documento
     // Habilitar o deshabilitar el botón de "Turnar Asunto" según las opciones seleccionada
     desactivar(true);
     $('#collapseTwo').collapse('hide');
     $('#btnTurnarAsunto').hide();
-    // Subir un PDF
-    $('#btnSubirArchivo').click(function () {
-        var formData = new FormData();
-        var fileInput = $('#documento')[0].files[0];
-        var folio = document.getElementById("folio").value;
-        formData.append('archivo', fileInput);
-        formData.append('folio', folio);
-        subirPdf(formData);
-    });
 
     // Guardando el Asunto
     $('#btnGuardarAsunto').click(function () {
-        // Desactivar todos los elementos del formulario
+        // Validar si el campo de archivo está lleno
+        if ($('#documento')[0].files.length === 0) {
+            customAlert.alert('Por favor, llena todos los campos del formulario.', 'Oops!');
+            return;
+        }
+        // Validar si todos los demás campos están llenos
+        var camposLlenos = true;
+        $('#formulario input[type="text"], #formulario select').each(function () {
+            if ($(this).val() === '') {
+                camposLlenos = false;
+                return false;
+            }
+        });
+        $('#formulario input[type="date"]').each(function () {
+            if ($(this).val() === '') {
+                camposLlenos = false;
+                return false;
+            }
+        });
+
+        if (!camposLlenos) {
+            customAlert.alert('Por favor, llena todos los campos del formulario.', 'Oops!');
+            return;
+        }
         $('#formulario input, #formulario select, #formulario button').prop('disabled', true);
         $('#btnGuardarAsunto').hide();
         $('#btnModificarAsunto').prop('disabled', false);
@@ -294,77 +345,91 @@ function after() {
     // Subir todo al sistema
     $('#btnTurnarAsunto').click(function () {
         // Subir solo el asunto
-
-        /* Inicio de insercion para el nuevo asunto */
-        var asunto = document.getElementById("asunto").value;
-        var remitente = document.getElementById("remitente").value;
-        var procedencia = document.getElementById("procedencia").value;
-        var fechaRecibida = document.getElementById("fecha_recibida").value;
-        var fechaVencimiento = document.getElementById("fecha_vencimiento").value;
-        var prioridad = document.getElementById("prioridad").value;
-        var idServicio = document.getElementById("servicio").value;
+        var subir = new FormData();
+        var fileInput = $('#documento')[0].files[0];
         var folio = document.getElementById("folio").value;
+        subir.append('archivo', fileInput);
+        subir.append('folio', folio);
+        subirPdf(subir)
+            .then(arch => {
+                /* Inicio de insercion para el nuevo asunto */
+                var asunto = document.getElementById("asunto").value;
+                var remitente = document.getElementById("remitente").value;
+                var procedencia = document.getElementById("procedencia").value;
+                var fechaRecibida = document.getElementById("fecha_recibida").value;
+                var fechaVencimiento = document.getElementById("fecha_vencimiento").value;
+                var prioridad = document.getElementById("prioridad").value;
+                var idServicio = document.getElementById("servicio").value;
+                var folio = document.getElementById("folio").value;
 
-        var formData = new FormData();
+                var formData = new FormData();
 
-        formData.append('asunto', asunto);
-        formData.append('remitente', remitente);
-        formData.append('procedencia', procedencia);
-        formData.append('fechaRecibida', fechaRecibida);
-        formData.append('fechaVencimiento', fechaVencimiento);
-        formData.append('prioridad', prioridad);
-        formData.append('idServicio', idServicio);
-        formData.append('documento', documento);
-        formData.append('folio', folio);
-        /* A partir de aqui se hace una insercion sobre todos los datos, de los asuntos */
-        nuevoAsunto(formData)
-            .then(id => {
-                /* Inicio de insercion para el turnado */
-                var form = new FormData();
-                const instruccionGeneral = document.getElementById('msgGeneral').value.trim();
-                form.append('folio', id);
-                form.append('instrucciones', instruccionGeneral);
-                turn(form)
-                    .then(data => {
-                        console.log(data);
-                        console.log("Turno creado con éxito.")
-                        /* Inicio de inserción para el turnado individual */
-                        const checkboxesSeleccionados = document.querySelectorAll(".direcTurn input[type='checkbox']:checked");
-                        const opcionesSeleccionadas = [];
+                formData.append('asunto', asunto);
+                formData.append('remitente', remitente);
+                formData.append('procedencia', procedencia);
+                formData.append('fechaRecibida', fechaRecibida);
+                formData.append('fechaVencimiento', fechaVencimiento);
+                formData.append('prioridad', prioridad);
+                formData.append('idServicio', idServicio);
+                formData.append('documento', arch);
+                formData.append('folio', folio);
+                /* A partir de aqui se hace una insercion sobre todos los datos, de los asuntos */
+                nuevoAsunto(formData)
+                    .then(id => {
+                        /* Inicio de insercion para el turnado */
+                        var form = new FormData();
+                        const instruccionGeneral = document.getElementById('msgGeneral').value.trim();
+                        form.append('folio', id);
+                        form.append('instrucciones', instruccionGeneral);
+                        turn(form)
+                            .then(data => {
+                                console.log("Turno creado con éxito.")
+                                /* Inicio de inserción para el turnado individual */
+                                const checkboxesSeleccionados = document.querySelectorAll(".direcTurn input[type='checkbox']:checked");
+                                const opcionesSeleccionadas = [];
 
-                        checkboxesSeleccionados.forEach(checkbox => {
-                            // Obtener el ID del checkbox
-                            const id = checkbox.id.split('-')[1]; // Obtener el ID después del guión
-                            const id_turno = data;
-                            // Obtener el valor del textarea de instrucción adicional
-                            const textBoxId = `textBox-${id}`;
-                            const instruccionAdicional = document.getElementById(textBoxId).value.trim();
+                                checkboxesSeleccionados.forEach(checkbox => {
+                                    // Obtener el ID del checkbox
+                                    const id = checkbox.id.split('-')[1]; // Obtener el ID después del guión
+                                    const id_turno = data;
+                                    // Obtener el valor del textarea de instrucción adicional
+                                    const textBoxId = `textBox-${id}`;
+                                    const instruccionAdicional = document.getElementById(textBoxId).value.trim();
 
-                            opcionesSeleccionadas.push({
-                                id: id,
-                                id_turno: id_turno,
-                                instruccionAdicional: instruccionAdicional
+                                    opcionesSeleccionadas.push({
+                                        id: id,
+                                        id_turno: id_turno,
+                                        instruccionAdicional: instruccionAdicional
+                                    });
+                                });
+                                turnadoMasive(opcionesSeleccionadas)
+                                    .then(res => {
+                                        $('#formulario input, #formulario select, #formulario button').prop('disabled', false);
+                                        $('#btnModificarAsunto').hide();
+                                        $('#btnGuardarAsunto').show();
+                                        $('#collapseTwo').collapse('hide');
+                                        $('#btnTurnarAsunto').hide();
+                                        //Vaciar los datos
+                                        $('#documento').val('');
+                                        $('#formulario input[type="text"], #formulario select').each(function () {
+                                            $(this).val('');
+                                        });
+                                        $('#formulario input[type="date"]').each(function () {
+                                            $(this).val('');
+                                        });
+                                        desactivar(false);
+                                        customAlert.alert('Todos los elementos han sido turnados con exito.', 'Todo bien!');
+                                    });
                             });
-                        });
+                    })
 
-                        console.log("Opciones seleccionadas:");
-                        turnadoMasive(opcionesSeleccionadas)
-                            .then(res => {
-                                $('#formulario input, #formulario select, #formulario button').prop('disabled', false);
-                                $('#btnModificarAsunto').hide();
-                                $('#btnGuardarAsunto').show();
-                                $('#collapseTwo').collapse('hide');
-                                $('#btnTurnarAsunto').hide();
-                                console.log("Turno Individual realizado? ", res);
-                            });
-                    });
-            })
-            .catch(error => {
+            }).catch(error => {
                 // Manejar cualquier error que ocurra durante el proceso
                 console.error('Error en el proceso:', error);
-            });
-
+                document.getElementById("errorText").style.display = "block";
+            })
     });
+
     const checkboxesIndividuales = document.querySelectorAll(".direcTurn input[type='checkbox']");
     checkboxesIndividuales.forEach(checkbox => {
         checkbox.addEventListener("change", function () {
