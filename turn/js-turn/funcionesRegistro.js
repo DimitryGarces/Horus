@@ -90,12 +90,7 @@ function cargarOpciones() {
     return new Promise(function (resolve, reject) {
         $('#btnTurnarAsunto').prop('disabled', true);
         fetch('../Back-End-php/select/opTurnar.php')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Error al obtener la secretaria. Código de estado: ' + response.status);
-                }
-                return response.json();
-            })
+            .then(response => response.json())
             .then(data => {
                 const divDirecciones = document.querySelector(".direcTurn");
                 const ul = document.createElement("ul");
@@ -148,7 +143,6 @@ function cargarOpciones() {
 
                     ul.appendChild(li);
                 });
-
                 divDirecciones.appendChild(ul);
                 resolve(); // Resolvemos la promesa cuando se completa la carga de opciones
             })
@@ -417,7 +411,7 @@ function after() {
                                         $('#formulario input[type="date"]').each(function () {
                                             $(this).val('');
                                         });
-                                        desactivar(false);
+                                        desactivar(true);
                                         customAlert.alert('Todos los elementos han sido turnados con exito.', 'Todo bien!');
                                     });
                             });

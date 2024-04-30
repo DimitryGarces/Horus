@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 'id_usuario' => $id_usuario,
                 'usuario' => $nombre_usuario,
                 'id_dep' => $id_departamento,
-                'id_depSup' => $id_depsup,
+                'id_depSup' => $id_depSup,
                 'dep' => $dep,
                 'id_tipo' => $id_tipo
             );
@@ -81,7 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         'id_usuario' => $id_usuario,
                         'usuario' => $nombre_usuario,
                         'id_dep' => $id_departamento,
-                        'id_depSup' => $id_depsup,
+                        'id_depSup' => $id_depSup,
                         'dep' => $dep,
                         'id_tipo' => $id_tipo
                     );
