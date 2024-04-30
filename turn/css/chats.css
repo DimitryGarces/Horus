@@ -55,6 +55,30 @@ input[type="radio"].Pendiente:checked + label:before {
     background: #dc3545; /* Rojo */
 }
 
+/* Estilos para tiempo "Lejos" */
+input[type="radio"].Cerca + label:before {
+    border-color: #ff7f50; /* Coral */
+}
+input[type="radio"].Cerca:checked + label:before {
+    background: #ff7f50; /* Coral */
+}
+
+/* Estilos para tiempo "Proximo" */
+input[type="radio"].Proximo + label:before {
+    border-color: #ffcc66; /* Amarillo Pastel */
+}
+input[type="radio"].Proximo:checked + label:before {
+    background: #ffcc66; /* Amarillo Pastel */
+}
+
+/* Estilos para tiempo "Cerca" */
+input[type="radio"].Lejos + label:before {
+    border-color: #98fb98; /* Verde Pálido */
+}
+input[type="radio"].Lejos:checked + label:before {
+    background: #98fb98; /* Verde Pálido */
+}
+
 
 .background-image {
     background-image: url('../../img/selecciona.png');

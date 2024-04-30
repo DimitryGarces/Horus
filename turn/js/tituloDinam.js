@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const primeraLetra = username.charAt(0); // Declaración de primeraLetra como constante
     window.addEventListener('load', resize);
     window.addEventListener('resize', resize);
-    cargarYMostrarDirecciones(department);
+    cambiarNombreEnDiv(department);
 
 
     function resize() {
@@ -42,31 +42,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (nombreDiv) {
             let etiqueta;
-            if (direccion.nombre.length > 30) {
+            if (direccion.length > 40) {
                 etiqueta = 'h4';
-            } else if (direccion.nombre.length > 15) {
+            } else if (direccion.length > 25) {
                 etiqueta = 'h3';
             } else {
                 etiqueta = 'h1';
             }
 
             // Actualizar el contenido con la nueva etiqueta
-            nombreDiv.innerHTML = `<${etiqueta}>${direccion.nombre}</${etiqueta}>`;
+            nombreDiv.innerHTML = `<${etiqueta}>${direccion}</${etiqueta}>`;
         } else {
             console.error('No se encontró ningún elemento con la clase "direccion"');
         }
-    }
-
-
-    function cargarYMostrarDirecciones(department) {
-        const jsonFile = './json/direcciones.json';
-        const nombreSinPrefijo = department.replace(/^Direccion:\s+/i, '').toUpperCase();
-        fetch(jsonFile)
-            .then(response => response.json())
-            .then(data => {
-                const nombreDireccion = buscarNombre(nombreSinPrefijo, data.direcciones);
-                cambiarNombreEnDiv(nombreDireccion);
-            })
-            .catch(error => console.error('Error al cargar las direcciones para el titulo:', error));
     }
 });
