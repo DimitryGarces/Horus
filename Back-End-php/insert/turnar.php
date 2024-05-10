@@ -1,19 +1,18 @@
 <?php
 session_start();
+include('../includes/db.php');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    header('Content-Type: application/json'); // Indicar que la respuesta es JSON
-    include('../includes/db.php');
+    header('Content-Type: application/json');
     
     if (isset($_SESSION['usuario'])) {
-        $id_usuario = $_SESSION['usuario'];
-        if (isset($_POST['folio']) && isset($_POST['instrucciones'])) {
+        $id_usuario = $_SESSION['usuario']['id_usuario'];
+        if (isset($_POST['folio'])) {
             $folio = $_POST['folio'];
             $instrucciones = $_POST['instrucciones'];
 
             $sql = "INSERT INTO Turno (Id_UsuarioEnvia, Folio, InstruccionGen, FechaGenerada) 
                     VALUES (?, ?, ?, NOW())";
 
-            // Preparar la consulta
             $stmt = mysqli_prepare($con, $sql);
             mysqli_stmt_bind_param($stmt, "iis", $id_usuario, $folio, $instrucciones);
 
