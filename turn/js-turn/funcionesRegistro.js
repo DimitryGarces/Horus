@@ -411,6 +411,18 @@ function after() {
                                         $('#formulario input[type="date"]').each(function () {
                                             $(this).val('');
                                         });
+                                        const checkboxesSeleccionados = document.querySelectorAll(".direcTurn input[type='checkbox']:checked");
+                                        checkboxesSeleccionados.forEach(checkbox => {
+                                            $(checkbox).prop('checked', false);
+                                        });
+                                        const textareas = document.querySelectorAll(".direcTurn textarea");
+                                        textareas.forEach(textarea => {
+                                            textarea.value = '';
+                                            textarea.style.display = "none";
+                                        });
+
+                                        const gen = document.querySelector("#msgGeneral");
+                                        gen.value = '';
                                         desactivar(true);
                                         customAlert.alert('Todos los elementos han sido turnados con exito.', 'Todo bien!');
                                     });

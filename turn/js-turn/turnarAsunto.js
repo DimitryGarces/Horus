@@ -14,7 +14,7 @@ var turnHTML = `
                         </fieldset>
                     </div>
                 <button type="submit" class="btn btn-primary mt-2" id="btnTurnarAsunto" disabled>Turnar Asunto</button>
-                <h2 id="errorText" style="display: none; color: red;">¡Intenta recargar la pagina!</h2>
+                <h4 id="errorText" style="display: none; color: red;">¡Oops algo salio mal, intenta recargar la pagina o cambiar el nombre d tu documento!</h4>
             </form>
         </div>
         <div class="col-5">
