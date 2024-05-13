@@ -8,8 +8,7 @@ if (isset($_SESSION['usuario'])) {
 
     // Consulta SQL para obtener los turnos recibidos por el departamento del usuario
     $sql = "
-    SELECT u.Departamento, t.folio, dt.InstruccionInd, t.InstruccionGen, 
-    s.FolioGen ,s.id_prioridad, s.fecha_vencimiento ,s.asunto
+    SELECT t.folio, u.Departamento, s.asunto, s.Fecha_Vencimiento
     FROM DepTurnada AS dt
     INNER JOIN Turno AS t ON dt.Id_Turno = t.Id_Turno
     INNER JOIN Situacion AS s ON t.folio = s.folio 
@@ -27,13 +26,14 @@ if (isset($_SESSION['usuario'])) {
     // Ejecutar la consulta
     mysqli_stmt_execute($stmt);
     // Vincular las columnas de resultados a variables
-    mysqli_stmt_bind_result($stmt, $Departamento, $folio, $InstruccionInd, $InstruccionGen, $FolioGen, $Id_Priori, $FechaV ,$asunto);
+    mysqli_stmt_bind_result($stmt, $folio, $Departamento, $asunto,$tiempo);
     // Recorrer los resultados y almacenarlos en el array
     while (mysqli_stmt_fetch($stmt)) {
         $resultados[] = array(
-            'Departamento' => $Departamento, 'Folio' => $folio,
-            'InstruccionInd' => $InstruccionInd, 'InstruccionGen' => $InstruccionGen,
-            'FolioGen' => $FolioGen, 'Prioridad' => $Id_Priori, 'FechaV' => $FechaV, 'Asunto' => $asunto
+            'Folio' => $folio,
+            'Departamento' => $Departamento,
+            'Asunto' => $asunto,
+            'Tiempo' => $tiempo
         );
     }
     // Cerrar la consulta preparada

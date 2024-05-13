@@ -11,27 +11,29 @@ if (isset($_SESSION['usuario'])) {
     $resultados = array();
     $resultados_extra = array();
     switch ($id_tipo) {
-        case 1:
+        case 4:
             $sql = "
-            SELECT Id_Departamento, Nombre
-            FROM Departamento
-            WHERE Id_Tipo = 1 AND Id_Departamento != ?
-            UNION ALL
             SELECT Id_Departamento, Nombre
             FROM Departamento
             WHERE Id_DepSup= ? AND Id_Departamento != ?
             ";
             break;
+        case 1:
+            $sql = "
+            SELECT Id_Departamento, Nombre
+            FROM Departamento
+            WHERE (Id_Tipo = 4) 
+            OR (Id_Tipo = 1 AND Id_Departamento != ? )
+            OR (Id_DepSup= ? AND Id_Departamento !=  ?)
+            ";
+            break;
         case 2:
             $sql = "
             SELECT Id_Departamento, Nombre
-                    FROM Departamento
-                    WHERE Id_Departamento= ?
-                    UNION ALL
-                    SELECT Id_Departamento, Nombre
-                    FROM Departamento
-                    WHERE Id_DepSup= ? and Id_Departamento != ?
-                    ";
+            FROM Departamento
+            WHERE (Id_Departamento= ? ) 
+            OR (Id_DepSup= ? and Id_Departamento != ?)
+            ";
             break;
         case 3:
             $sql = "
@@ -46,6 +48,9 @@ if (isset($_SESSION['usuario'])) {
     }
     $stmt = mysqli_prepare($con, $sql);
     switch ($id_tipo) {
+        case 4:
+            mysqli_stmt_bind_param($stmt, "ii", $id_secretaria, $id_secretaria);
+            break;
         case 1:
             mysqli_stmt_bind_param($stmt, "iii", $id_secretaria, $id_secretaria, $id_secretaria);
             break;

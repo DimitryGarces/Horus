@@ -1,0 +1,57 @@
+
+  .encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .encabezado h6 {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+  .fecha-vencimiento {
+    font-weight: bold;
+    color: #999;
+  }
+
+  .asunto {
+    font-size: 18px;
+    font-weight: lighter;
+    margin-bottom: 10px;
+  }
+
+  .remitente {
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .documento {
+    margin-bottom: 20px;
+  }
+  .documento-titulo{
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .pdf-container {
+    border: 1px solid #ccc;
+  }
+
+  .indicaciones {
+    margin-bottom: 20px;
+  }
+
+  .indicacion-titulo {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .indicacion-contenido {
+    line-height: 1.5;
+  }
+
+  .dependencia {
+    font-weight: bold;
+  }

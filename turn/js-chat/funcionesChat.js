@@ -6,7 +6,7 @@ function cargarMensajes() {
                 const divChats = document.querySelector(".mensajeEntrante");
                 const ul = document.createElement("ul");
                 data.forEach(element => {
-                    ul.appendChild(menuIz(element.Folio, element.Asunto, element.FechaV, element.Departamento, element.InstruccionInd, element.InstruccionGen));
+                    ul.appendChild(menuIz(element.Folio, element.Departamento, element.Asunto , element.Tiempo));
                     divChats.appendChild(ul);
                 });
                 resolve();
@@ -18,8 +18,32 @@ function cargarMensajes() {
     });
 }
 
+function vistaPrev(turno, origen, asunto, tiempo) {
+    const formData = new FormData();
+    formData.append("turno", turno);
+    fetch('../Back-End-php/select/vistaPrev.php', {
+        method: "POST",
+        body: formData
+    })
+        .then(response => response.json())
+        .then(res => {
+            var vista = document.querySelector(".vistaPrevDoc");
+            vista.innerHTML = '';
+            const redirectLink = `Turno.html?turno=${encodeURIComponent(turno)}&origen=${encodeURIComponent(origen)}&tiempo=${encodeURIComponent(tiempo)}&docx=${res[0].Path}`;
+            var view = `
+                <iframe class="pdfPreView" src="../asuntos/${res[0].Path}#view=FitH" width="100%" height="600px"></iframe>
+                <button data-text="Detalles" id="detallesButton" type="button" onclick="window.open('${redirectLink}', '_blank')">
+                    <span>Ver</span>
+                </button>
+            `;
+            vista.innerHTML = view;
+        });
 
-function menuIz(turno, asunto, tiempo, origen, instruccionI, instruccionG) {
+    /*const url = `Turno.html?turno=${encodeURIComponent(turno)}&asunto=${encodeURIComponent(asunto)}&origen=${encodeURIComponent(origen)}&instruccionI=${encodeURIComponent(instruccionI)}&instruccionG=${encodeURIComponent(instruccionG)}`;
+    window.open(url, '_blank');*/
+}
+
+function menuIz(turno, origen, asunto , tiempo) {
     const li = document.createElement("li");
     const radiobox = document.createElement("input");
 
@@ -53,58 +77,17 @@ function menuIz(turno, asunto, tiempo, origen, instruccionI, instruccionG) {
 
     const label = document.createElement("label");
     label.setAttribute("for", `radio-${turno}`);
-    label.textContent = turno + " - " + asunto;
+    label.textContent = turno + " - " + origen + " / " + asunto;
     label.classList.add("labelChats");
+    label.classList.add("h5");
     radiobox.addEventListener("click", function () {
-        verChat(turno, asunto, origen, instruccionI, instruccionG);
+        vistaPrev(turno, origen, asunto, tiempo);
     });
 
     li.appendChild(radiobox);
     li.appendChild(label);
 
     return li;
-}
-
-
-function verChat(turno, asunto, origen, instruccionI, instruccionG) {
-    const formData = new FormData();
-    formData.append('turno', turno);
-    fetch('../Back-End-php/select/turnoEsp.php', {
-        method: 'POST',
-        body: formData
-    })
-        .then(response => response.json())
-        .then(data => {
-            const divImagen = document.querySelector(".background-image");
-            const divContenido = document.querySelector(".contenido");
-
-            divContenido.innerHTML = '';
-            divImagen.style.display = 'none';
-
-            divContenido.innerHTML = `
-            <div class="d-flex justify-content-end">
-                <p class="fw-bold">
-                    <h6>Recibido:&nbsp;${data[0].fecha}&nbsp;&nbsp;&nbsp;&nbsp;Vence:&nbsp;${data[0].fechaV}</h6>
-                </p>
-            </div>
-            <br>
-            <h7><p class="fw-bold" style="display: inline;">Remitente:</p> ${data[0].remitente}</h7>
-            <br><br>
-            <h6 id="list-item-${turno}">Documento:</h6>
-            <p>
-            <object class="pdfview" type="application/pdf" data="../asuntos/${data[0].path}"></object>
-            </p>
-            <p class="fw-bold">Indicación General: </p>
-            <p class="fw-light">${instruccionG}</p>
-            <p class="fw-bold">Indicación Individual: </p>
-            <p class="fw-light">${instruccionI}</p>
-            <h7><p class="fw-bold" style="display: inline;">Dependencia: </p> ${origen}</h7>
-            <br>
-            <br>`;
-        })
-        .catch(error => {
-            console.error('Error al obtener los mensajes:', error);
-        });
 }
 
 
@@ -122,9 +105,11 @@ function cargarScript(url, callback) {
 
 // Cargar los scripts dinámicamente uno por uno
 cargarScript('./js-chat/containerChats.js', function () {
-    cargarMensajes().then(res => {
-        inicio();
-    }).catch(error => {
-        console.log(error);
+    cargarScript('./js-chat/vistaPrevia.js', function () {
+        cargarMensajes().then(res => {
+            inicio();
+        }).catch(error => {
+            console.log(error);
+        });
     });
 });

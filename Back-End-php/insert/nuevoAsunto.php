@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $folio = $_POST['folio'];
 
     // Definir la consulta SQL para insertar los datos en la tabla Situacion
-    $sql = "INSERT INTO Situacion (Id_Prioridad, Id_Estatus, Id_Procedencia, Remitente, Asunto, Fecha_Recibida, Fecha_Vencimiento, Path,Id_Servicio, FolioGen) 
+    $sql = "INSERT INTO Situacion (Id_Prioridad, Id_Estatus, Id_Procedencia, Remitente, Asunto, Fecha_Recibida, Fecha_Vencimiento, path,Id_Servicio, FolioGen) 
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     // Preparar la consulta
@@ -24,8 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Valor manual para Id_Estatus
     $idEstatus = 1;
-
-    // Vincular los parámetros
     // Vincular los parámetros
     mysqli_stmt_bind_param($stmt, "iiisssssis", $prioridad, $idEstatus, $procedencia, $remitente, $asunto, $fechaRecibida, $fechaVencimiento, $documento, $servicio, $folio);
 
