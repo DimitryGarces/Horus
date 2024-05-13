@@ -41,7 +41,7 @@ for index, row in df.iterrows():
                 rendimiento = (resueltos / total) * 100 if total != 0 else 0
                 d['Resueltos'] = resueltos
                 d['Pendientes'] = pendientes
-                d['Rendimiento'] = round(rendimiento, 2)  # Truncar a dos decimales
+                d['Rendimiento'] = round(rendimiento, 0)  # Truncar a dos decimales
                 break
 
 # Calcular el rendimiento general para cada categoría
@@ -53,7 +53,7 @@ for conjunto, data in datos_json.items():
     datos_json[conjunto]['Resumen'] = {
         'Resueltos_totales': resueltos_totales,
         'Pendientes_totales': pendientes_totales,
-        'Rendimiento_general': round(rendimiento_general, 2)  # Truncar a dos decimales
+        'Rendimiento_general': round(rendimiento_general, 0)  # Truncar a dos decimales
     }
 
 # Escribir el JSON en un archivo
