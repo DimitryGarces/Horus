@@ -24,7 +24,8 @@
     align-items: center;
     justify-content: center;
     padding: 0;
-    background: #0072fd;
+    /*background: linear-gradient(40deg, #ff6347, #318eff);*/
+    background: linear-gradient(40deg, #ff9aa6, #78a1e1);
     /* Mismo color que el fondo del formulario */
     color: #fff;
     text-transform: uppercase;
@@ -63,7 +64,7 @@
 
 #detallesButton:hover {
     /*background: #0072fd;*/
-    background: linear-gradient(to right, rgba(13, 77, 123), rgba(112, 89, 131));
+    background: linear-gradient(40deg, #318eff, rgba(112, 89, 131));
 }
 
 #detallesButton:hover span {

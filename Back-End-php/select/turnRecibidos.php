@@ -26,7 +26,7 @@ if (isset($_SESSION['usuario'])) {
     // Ejecutar la consulta
     mysqli_stmt_execute($stmt);
     // Vincular las columnas de resultados a variables
-    mysqli_stmt_bind_result($stmt, $folio, $Departamento, $asunto,$tiempo);
+    mysqli_stmt_bind_result($stmt, $folio, $Departamento, $asunto, $tiempo);
     // Recorrer los resultados y almacenarlos en el array
     while (mysqli_stmt_fetch($stmt)) {
         $resultados[] = array(

@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $folio = $_POST['turno'];
         $id = $_SESSION['usuario']['id_dep'];
         $sql = "
-        SELECT s.remitente, s.asunto, s.fecha_recibida, t.InstruccionGen , dt.instruccionInd
+        SELECT s.remitente, s.asunto, s.fecha_recibida, t.InstruccionGen , dt.instruccionInd, s.folio
         FROM Situacion as s
         INNER JOIN Turno as t on t.Folio = s.Folio 
         INNER JOIN DepTurnada AS dt on dt.Id_Turno = t.Id_Turno
@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt = mysqli_prepare($con, $sql);
         mysqli_stmt_bind_param($stmt, "ii", $id, $folio);
         mysqli_stmt_execute($stmt);
-        mysqli_stmt_bind_result($stmt, $remitente, $asunto, $fechaRecibida, $instruccionGen, $instruccionInd);
+        mysqli_stmt_bind_result($stmt, $remitente, $asunto, $fechaRecibida, $instruccionGen, $instruccionInd, $folio);
 
         $resultados = array();
         if (mysqli_stmt_fetch($stmt)) {
@@ -26,7 +26,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 'asunto' => $asunto,
                 'fecha' => $fechaRecibida,
                 'insGen' => $instruccionGen,
-                'insInd' => $instruccionInd
+                'insInd' => $instruccionInd,
+                'folio' => $folio
             );
         }
         mysqli_stmt_close($stmt);

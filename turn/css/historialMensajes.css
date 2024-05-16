@@ -1,0 +1,19 @@
+
+#historialMensajes {
+    list-style: none;
+    padding: 0;
+}
+
+.mensaje {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+}
+
+.mensaje a {
+    color: linear-gradient(40deg, #9aa2ff, #78a1e1);
+    text-decoration: none;
+}
+
+.mensaje a:hover {
+    text-decoration: underline;
+}

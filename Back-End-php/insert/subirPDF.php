@@ -2,17 +2,16 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $folio = $_POST['folio'];
     $fecha = date('d-m-Y');
+    $hora = date('H-i-s');
 
     $targetDir = $_SERVER['DOCUMENT_ROOT'] . "/HORUS/asuntos/";
 
     $fileName = basename($_FILES["archivo"]["name"]);
     $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
 
-    // Generar un nombre único para el archivo
-    $uniqueFileName = $folio . '-' . $fecha . '.' . $fileType;
+    $uniqueFileName = $folio . '-' . $fecha . '-' . $hora . '.' . $fileType;
     $targetFilePath = $targetDir . $uniqueFileName;
 
-    // Verificar si el directorio de destino existe, si no, crearlo
     if (!file_exists($targetDir)) {
         mkdir($targetDir, 0777, true);
     }

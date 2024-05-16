@@ -6,7 +6,7 @@ function cargarMensajes() {
                 const divChats = document.querySelector(".mensajeEntrante");
                 const ul = document.createElement("ul");
                 data.forEach(element => {
-                    ul.appendChild(menuIz(element.Folio, element.Departamento, element.Asunto , element.Tiempo));
+                    ul.appendChild(menuIz(element.Folio, element.Departamento,element.Asunto, element.Tiempo));
                     divChats.appendChild(ul);
                 });
                 resolve();
@@ -18,7 +18,7 @@ function cargarMensajes() {
     });
 }
 
-function vistaPrev(turno, origen, asunto, tiempo) {
+function vistaPrev(turno, origen, tiempo) {
     const formData = new FormData();
     formData.append("turno", turno);
     fetch('../Back-End-php/select/vistaPrev.php', {
@@ -43,7 +43,7 @@ function vistaPrev(turno, origen, asunto, tiempo) {
     window.open(url, '_blank');*/
 }
 
-function menuIz(turno, origen, asunto , tiempo) {
+function menuIz(turno, origen, asunto, tiempo) {
     const li = document.createElement("li");
     const radiobox = document.createElement("input");
 
@@ -81,7 +81,7 @@ function menuIz(turno, origen, asunto , tiempo) {
     label.classList.add("labelChats");
     label.classList.add("h5");
     radiobox.addEventListener("click", function () {
-        vistaPrev(turno, origen, asunto, tiempo);
+        vistaPrev(turno, origen, tiempo);
     });
 
     li.appendChild(radiobox);

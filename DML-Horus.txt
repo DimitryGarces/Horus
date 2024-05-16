@@ -1,7 +1,8 @@
 INSERT INTO Tipo (nombre) VALUES
 ('Dirección'),
 ('SubDirección'),
-('Jefatura');
+('Jefatura'),
+('OPD');
 
 INSERT INTO Gabinete (nombre)
 VALUES ('Ciudad'),
@@ -119,6 +120,40 @@ VALUES
 (3, 8),
 (4, 9);
 
+/*ODP*/
+INSERT INTO datosusuario  (nombre,apellidoP,apellidoM, usuario, contrasenia, telefono)
+VALUES ('Diego','Garces','Morales', 'Dimitry', '12345678', '7224998931');
+
+INSERT INTO Usuario (Id_DatosU, Id_Departamento)
+VALUES (5, 1);
+
+/*Obras Publicas*/
+INSERT INTO datosusuario  (nombre,apellidoP,apellidoM, usuario, contrasenia, telefono)
+VALUES ('Obras','Garces','Morales', 'Obras', '12345678', '7224998931');
+
+INSERT INTO Usuario (Id_DatosU, Id_Departamento)
+VALUES (6, 2);
+
+/*Construccion*/
+INSERT INTO datosusuario  (nombre,apellidoP,apellidoM, usuario, contrasenia, telefono)
+VALUES ('Diego','Garces','Morales', 'Construccion', '12345678', '7224998931');
+
+INSERT INTO Usuario (Id_DatosU, Id_Departamento)
+VALUES (7, 12);
+
+/*Conservación*/
+INSERT INTO datosusuario  (nombre,apellidoP,apellidoM, usuario, contrasenia, telefono)
+VALUES ('Diego','Garces','Morales', 'Conservacion', '12345678', '7224998931');
+
+INSERT INTO Usuario (Id_DatosU, Id_Departamento)
+VALUES (8, 14);
+
+/*OPDAPAS*/
+INSERT INTO datosusuario  (nombre,apellidoP,apellidoM, usuario, contrasenia, telefono)
+VALUES ('Diego','Garces','Morales', 'OPDAPAS', '12345678', '7224998931');
+
+INSERT INTO Usuario (Id_DatosU, Id_Departamento)
+VALUES (9, 4);
 
 ** Vistas Generaless ** 
 

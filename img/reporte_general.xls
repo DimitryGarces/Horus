@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Prueba</title>
+<style type="text/css">
+<!--
+.Estilo1 {
+	font-family: "futura Bk BT";
+	font-weight: bold;
+}
+-->
+</style>
+</head>
+
+<body>
+<table width="50%" border="1">
+  <tr>
+    <td colspan="10" align="center"><span class="Estilo1">Reporte General por Dependencia de los Turnos</span></td>
+  </tr>
+  <tr>
+    <td colspan="10" align="center"><span class="Estilo1">De 2024-01-01 al 2024-04-26.</span></td>
+  </tr>
+
+  <tr>
+    <td colspan="10" align="center">&nbsp;</td>
+  </tr>
+  <tr>
+    <td style="color:#fff; background:rgb(0,79,80)"><div align="center" class="Estilo1">No.</div></td>
+    <td style="color:#fff; background:rgb(0,79,80)"><div align="center" class="Estilo1">Dependencia</div></td>
+    <td style="color:#fff;background:rgb(226,107,10)"><div align="center" class="Estilo1">Turnado</div></td>
+    <td style="color:#fff;background:rgb(226,107,10)"><div align="center" class="Estilo1">Folios</div></td>
+    <td style="color:#fff;background:rgb(96,73,122)"><div align="center" class="Estilo1">En Tr&aacute;mite</div></td>
+    <td style="color:#fff;background:rgb(96,73,122)"><div align="center" class="Estilo1">Folios</div></td>
+    <td style="color:#fff;background:rgb(204,0,102)"><div align="center" class="Estilo1">Propuesta de Cierre</div></td>
+    <td style="color:#fff;background:rgb(204,0,102)"><div align="center" class="Estilo1">Folios</div></td>
+    <td style="color:#fff;background:rgb(118,147,60)"><div align="center" class="Estilo1">Concluido</div></td>
+    <td style="color:#fff;background:rgb(118,147,60)"><div align="center" class="Estilo1">Folios</div></td>
+  </tr>
+  <tr><td>1</td>
+					<td>SECRETARÍA TÉCNICA DE PRESIDENCIA</td><td style="background:rgb(253,233,217)">3</td>
+				    <td style="background:rgb(253,233,217)"><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00350-2024-circular001_202403081607.pdf" target="_blank" > 350 </a> ,<a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00476-2024-CIRCULARSP02.pdf" target="_blank" > 476 </a> ,<a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00521-2024-612_202404181916.pdf" target="_blank" > 521 </a> ,</td><td>0</td><td></td><td>0</td><td></td><td>0</td><td></td></tr><tr><td>2</td>
+					<td>TESORERÍA</td><td>0</td><td></td><td style=" background:rgb(204,192,218)">9</td>
+				    <td style=" background:rgb(204,192,218)"><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00317-2024-367_202403051120.pdf" target="_blank" > 317, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00462-2024-556_202404092006.pdf" target="_blank" > 462, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00510-2024-calendarioact_202404171451.pdf" target="_blank" > 510, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00513-2024-601.pdf" target="_blank" > 513, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00524-2024-sevac_202404191922.pdf" target="_blank" > 524, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00525-2024-617_202404191923.pdf" target="_blank" > 525, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00540-2024-presupuestopart_202404241324.pdf" target="_blank" > 540, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00545-2024-reuhacend_202404241934.pdf" target="_blank" > 545, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00547-2024-648_202404251930.pdf" target="_blank" > 547, </a></td><td style=" background:rgb(255,204,255)">1</td>
+				    <td style=" background:rgb(255,204,255)">43,</td><td style=" background:rgb(216,228,188)">109</td>
+					<td style=" background:rgb(216,228,188)">11,25,26,28,29,30,32,33,41,46,47,48,49,61,65,71,72,84,86,92,98,99,100,118,119,125,128,138,139,150,152,154,160,163,164,165,166,168,176,177,180,185,186,187,189,190,194,195,196,204,205,217,228,231,238,239,240,254,258,261,266,270,271,272,279,301,328,335,346,347,348,350,361,364,365,371,372,378,379,380,407,408,412,414,415,416,424,429,430,431,434,441,444,445,446,463,464,475,476,482,483,484,508,514,515,532,533,534,544,</td></tr><tr><td>3</td>
+					<td>SECRETARÍA DEL AYUNTAMIENTO</td><td>0</td><td></td><td style=" background:rgb(204,192,218)">25</td>
+				    <td style=" background:rgb(204,192,218)"><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00071-2024-81_202401181702.pdf" target="_blank" > 71, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00131-2024-151_202401291146.pdf" target="_blank" > 131, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00278-2024-cursocapregadmin_202402261155.pdf" target="_blank" > 278, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00311-2024-360_202403051116.pdf" target="_blank" > 311, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00312-2024-361_202403051116.pdf" target="_blank" > 312, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00313-2024-362_202403051117.pdf" target="_blank" > 313, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00314-2024-363_202403051118.pdf" target="_blank" > 314, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00315-2024-364_202403051119.pdf" target="_blank" > 315, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00342-2024-cielr_202403041437.pdf" target="_blank" > 342, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00371-2024-ihaem102_202403121922.pdf" target="_blank" > 371, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00391-2024-456_202403191910.pdf" target="_blank" > 391, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00419-2024-demarcacion_202404011145.pdf" target="_blank" > 419, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00422-2024-caracteristicasdeeoeccion_202404011319.pdf" target="_blank" > 422, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00426-2024-497_202404011928.pdf" target="_blank" > 426, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00447-2024-537.pdf" target="_blank" > 447, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00451-2024-542_202404081944.pdf" target="_blank" > 451, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00458-2024-549_202404091957.pdf" target="_blank" > 458, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00459-2024-550_202404091958.pdf" target="_blank" > 459, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00462-2024-556_202404092006.pdf" target="_blank" > 462, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00478-2024-581_202404121946.pdf" target="_blank" > 478, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00480-2024-573_202404151134.pdf" target="_blank" > 480, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00481-2024-576_202404151135.pdf" target="_blank" > 481, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00521-2024-612_202404181916.pdf" target="_blank" > 521, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00531-2024-623_202404222000.pdf" target="_blank" > 531, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00537-2024-591bis_202404231157.pdf" target="_blank" > 537, </a></td><td>0</td><td></td><td style=" background:rgb(216,228,188)">34</td>
+					<td style=" background:rgb(216,228,188)">57,60,68,70,81,97,121,122,126,132,138,175,190,225,230,265,295,305,324,344,350,368,369,375,385,366,398,399,418,441,443,449,455,476,</td></tr><tr><td>4</td>
+					<td>DIRECCIÓN DE ADMINISTRACIÓN</td><td>0</td><td></td><td style=" background:rgb(204,192,218)">1</td>
+				    <td style=" background:rgb(204,192,218)"><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00501-2024-procesosdformacion_202404171222.pdf" target="_blank" > 501, </a></td><td>0</td><td></td><td style=" background:rgb(216,228,188)">29</td>
+					<td style=" background:rgb(216,228,188)">10,26,38,40,45,49,134,153,171,174,190,203,265,266,291,305,317,325,350,447,451,476,486,489,490,493,494,495,508,</td></tr><tr><td>5</td>
+					<td>CONSEJERÍA JURÍDICO</td><td>0</td><td></td><td style=" background:rgb(204,192,218)">7</td>
+				    <td style=" background:rgb(204,192,218)"><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00427-2024-498_202404011929.pdf" target="_blank" > 427, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00449-2024-540_202404081943.pdf" target="_blank" > 449, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00458-2024-549_202404091957.pdf" target="_blank" > 458, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00466-2024-554_202404092001.pdf" target="_blank" > 466, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00467-2024-555_202404092003.pdf" target="_blank" > 467, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00481-2024-576_202404151135.pdf" target="_blank" > 481, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00522-2024-613_202404181917.pdf" target="_blank" > 522, </a></td><td>0</td><td></td><td style=" background:rgb(216,228,188)">38</td>
+					<td style=" background:rgb(216,228,188)">11,71,127,190,241,243,260,318,319,320,333,334,344,350,352,357,367,321,383,386,400,401,402,403,409,410,422,423,452,454,461,465,476,478,503,506,517,520,</td></tr><tr><td>6</td>
+					<td>DIRECCIÓN DE GOBERNACIÓN</td><td>0</td><td></td><td>0</td><td></td><td>0</td><td></td><td style=" background:rgb(216,228,188)">5</td>
+					<td style=" background:rgb(216,228,188)">190,259,350,476,509,</td></tr><tr><td>7</td>
+					<td>DIRECCIÓN DE DESARROLLO ECONÓMICO, TURÍSTICO Y ARTESANAL</td><td>0</td><td></td><td style=" background:rgb(204,192,218)">3</td>
+				    <td style=" background:rgb(204,192,218)"><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00466-2024-554_202404092001.pdf" target="_blank" > 466, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00467-2024-555_202404092003.pdf" target="_blank" > 467, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00509-2024-ventaarttianguistenco_202404171227.pdf" target="_blank" > 509, </a></td><td>0</td><td></td><td style=" background:rgb(216,228,188)">12</td>
+					<td style=" background:rgb(216,228,188)">73,124,141,190,206,288,350,355,386,432,433,476,</td></tr><tr><td>8</td>
+					<td>DIRECCIÓN DE DESARROLLO SOCIAL</td><td>0</td><td></td><td style=" background:rgb(204,192,218)">6</td>
+				    <td style=" background:rgb(204,192,218)"><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00009-2023-1698_202401081706.pdf" target="_blank" > 9, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00350-2024-circular001_202403081607.pdf" target="_blank" > 350, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00424-2024-7moseminario_202404011526.pdf" target="_blank" > 424, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00449-2024-540_202404081943.pdf" target="_blank" > 449, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00470-2024-personasmayores_202404101218.pdf" target="_blank" > 470, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00476-2024-CIRCULARSP02.pdf" target="_blank" > 476, </a></td><td>0</td><td></td><td style=" background:rgb(216,228,188)">6</td>
+					<td style=" background:rgb(216,228,188)">37,190,198,208,222,282,</td></tr><tr><td>9</td>
+					<td>DIRECCIÓN DE SEGURIDAD PÚBLICA</td><td>0</td><td></td><td style=" background:rgb(204,192,218)">17</td>
+				    <td style=" background:rgb(204,192,218)"><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00013-2023-3_202401081712.pdf" target="_blank" > 13, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00034-2024-17_202401111204.pdf" target="_blank" > 34, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00082-2024-dep113_202401191206.pdf" target="_blank" > 82, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00167-2024-192_202402011819.pdf" target="_blank" > 167, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00283-2024-328_202402281147.pdf" target="_blank" > 283, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00321-2024-371_202403051303.pdf" target="_blank" > 321, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00407-2024-480_202403211919.pdf" target="_blank" > 407, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00417-2024-492_202403221915.pdf" target="_blank" > 417, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00427-2024-498_202404011929.pdf" target="_blank" > 427, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00429-2024-500_202404011932.pdf" target="_blank" > 429, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00442-2024-531_202404041948.pdf" target="_blank" > 442, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00452-2024-544_202404081945.pdf" target="_blank" > 452, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00476-2024-CIRCULARSP02.pdf" target="_blank" > 476, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00496-2024-599_202404171113.pdf" target="_blank" > 496, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00511-2024-policiainvestigador24_202404171553.pdf" target="_blank" > 511, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00520-2024-609_202404181915.pdf" target="_blank" > 520, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00535-2024-628_202404222001.pdf" target="_blank" > 535, </a></td><td>0</td><td></td><td style=" background:rgb(216,228,188)">45</td>
+					<td style=" background:rgb(216,228,188)">3,4,12,16,17,18,22,36,43,64,69,90,94,97,108,122,139,152,177,182,188,190,196,211,235,244,245,249,255,290,307,350,368,372,383,389,390,398,419,430,443,455,477,479,517,</td></tr><tr><td>10</td>
+					<td>DIRECCIÓN DE DESARROLLO URBANO Y METROPOLITANO</td><td>0</td><td></td><td style=" background:rgb(204,192,218)">4</td>
+				    <td style=" background:rgb(204,192,218)"><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00369-2024-427_202403111905.pdf" target="_blank" > 369, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00476-2024-CIRCULARSP02.pdf" target="_blank" > 476, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00499-2024-589_202404171110.pdf" target="_blank" > 499, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00531-2024-623_202404222000.pdf" target="_blank" > 531, </a></td><td>0</td><td></td><td style=" background:rgb(216,228,188)">20</td>
+					<td style=" background:rgb(216,228,188)">11,62,78,121,123,160,161,190,236,244,251,259,267,268,293,350,371,390,433,442,</td></tr><tr><td>11</td>
+					<td>DIRECCIÓN DE CULTURA</td><td>0</td><td></td><td>0</td><td></td><td>0</td><td></td><td style=" background:rgb(216,228,188)">8</td>
+					<td style=" background:rgb(216,228,188)">64,80,85,169,190,350,437,476,</td></tr><tr><td>12</td>
+					<td>DIRECCIÓN DE SERVICIOS PÚBLICOS</td><td style="background:rgb(253,233,217)">3</td>
+				    <td style="background:rgb(253,233,217)"><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00505-2024-dictamenarbolado_202404171223.pdf" target="_blank" > 505 </a> ,<a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00526-2024-620_202404191923.pdf" target="_blank" > 526 </a> ,<a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00528-2024-622_202404191924.pdf" target="_blank" > 528 </a> ,</td><td style=" background:rgb(204,192,218)">10</td>
+				    <td style=" background:rgb(204,192,218)"><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00341-2024-395_202403061814.pdf" target="_blank" > 341, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00354-2024-413_202403081829.pdf" target="_blank" > 354, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00389-2024-AvRealdeArcosdivpet1_202403191406.pdf" target="_blank" > 389, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00404-2024-476_202403201942.pdf" target="_blank" > 404, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00405-2024-477_202403201942.pdf" target="_blank" > 405, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00413-2024-484_202403221914.pdf" target="_blank" > 413, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00443-2024-533_202404041949.pdf" target="_blank" > 443, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00476-2024-CIRCULARSP02.pdf" target="_blank" > 476, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00485-2024-580_202404151136.pdf" target="_blank" > 485, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00527-2024-621_202404191924.pdf" target="_blank" > 527, </a></td><td>0</td><td></td><td style=" background:rgb(216,228,188)">23</td>
+					<td style=" background:rgb(216,228,188)">7,31,39,58,59,75,89,95,137,162,190,197,219,247,262,293,296,350,359,283,374,376,377,</td></tr><tr><td>13</td>
+					<td>DIRECCIÓN DE MEDIO AMBIENTE</td><td>0</td><td></td><td>0</td><td></td><td>0</td><td></td><td style=" background:rgb(216,228,188)">26</td>
+					<td style=" background:rgb(216,228,188)">24,31,58,59,75,89,95,137,190,197,201,233,234,247,262,309,350,359,363,377,389,405,413,476,485,505,</td></tr><tr><td>14</td>
+					<td>DIRECCIÓN DE GOBIERNO POR RESULTADOS</td><td style="background:rgb(253,233,217)">1</td>
+				    <td style="background:rgb(253,233,217)"><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00540-2024-presupuestopart_202404241324.pdf" target="_blank" > 540 </a> ,</td><td style=" background:rgb(204,192,218)">1</td>
+				    <td style=" background:rgb(204,192,218)"><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00282-2024-fichatecnica_202402281140.pdf" target="_blank" > 282, </a></td><td>0</td><td></td><td style=" background:rgb(216,228,188)">17</td>
+					<td style=" background:rgb(216,228,188)">6,35,37,63,83,88,146,147,190,252,266,278,350,355,381,456,476,</td></tr><tr><td>15</td>
+					<td>DIRECCIÓN DE IGUALDAD DE GÉNERO</td><td>0</td><td></td><td>0</td><td></td><td>0</td><td></td><td style=" background:rgb(216,228,188)">10</td>
+					<td style=" background:rgb(216,228,188)">53,132,142,190,235,248,350,370,385,476,</td></tr><tr><td>16</td>
+					<td>DIRECCIÓN DE EDUCACIÓN</td><td>0</td><td></td><td>0</td><td></td><td>0</td><td></td><td style=" background:rgb(216,228,188)">5</td>
+					<td style=" background:rgb(216,228,188)">190,192,350,438,476,</td></tr><tr><td>17</td>
+					<td>CONTRALORÍA MUNICIPAL</td><td style="background:rgb(253,233,217)">1</td>
+				    <td style="background:rgb(253,233,217)"><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00544-2024-646_202404241902.pdf" target="_blank" > 544 </a> ,</td><td style=" background:rgb(204,192,218)">9</td>
+				    <td style=" background:rgb(204,192,218)"><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00025-2024-22_202401111157.pdf" target="_blank" > 25, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00266-2024-316.pdf" target="_blank" > 266, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00452-2024-544_202404081945.pdf" target="_blank" > 452, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00453-2024-promocionintegridadpublica_202404091244.pdf" target="_blank" > 453, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00457-2024-Caracteristicasdeeleccion.pdf" target="_blank" > 457, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00462-2024-556_202404092006.pdf" target="_blank" > 462, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00465-2024-559_202404092005.pdf" target="_blank" > 465, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00513-2024-601.pdf" target="_blank" > 513, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00514-2024-602_202404171916.pdf" target="_blank" > 514, </a></td><td style=" background:rgb(255,204,255)">1</td>
+				    <td style=" background:rgb(255,204,255)">125,</td><td style=" background:rgb(216,228,188)">35</td>
+					<td style=" background:rgb(216,228,188)">13,21,27,55,61,63,65,92,119,136,166,190,210,242,254,261,328,329,350,356,361,408,407,434,440,441,476,486,489,493,494,495,508,515,525,</td></tr><tr><td>18</td>
+					<td>DIRECCIÓN DEL OPDAPAS</td><td>0</td><td></td><td style=" background:rgb(204,192,218)">3</td>
+				    <td style=" background:rgb(204,192,218)"><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00435-2024-514_202404021902.pdf" target="_blank" > 435, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00519-2024-cuestionarioconagua_202404181511.pdf" target="_blank" > 519, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00523-2024-quincuagesima_202404191121.pdf" target="_blank" > 523, </a></td><td style=" background:rgb(255,204,255)">1</td>
+				    <td style=" background:rgb(255,204,255)">160,</td><td style=" background:rgb(216,228,188)">20</td>
+					<td style=" background:rgb(216,228,188)">15,56,91,102,144,148,180,190,205,269,274,279,296,350,420,421,424,436,476,490,</td></tr><tr><td>19</td>
+					<td>DIRECCIÓN DEL IMCUFIDEM</td><td>0</td><td></td><td style=" background:rgb(204,192,218)">1</td>
+				    <td style=" background:rgb(204,192,218)"><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00492-2024-593_202404152052.pdf" target="_blank" > 492, </a></td><td>0</td><td></td><td style=" background:rgb(216,228,188)">9</td>
+					<td style=" background:rgb(216,228,188)">66,188,190,245,350,443,476,516,538,</td></tr><tr><td>20</td>
+					<td>DIRECCIÓN DEL SMDIF</td><td style="background:rgb(253,233,217)">1</td>
+				    <td style="background:rgb(253,233,217)"><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00536-2024-fobam_202404231156.pdf" target="_blank" > 536 </a> ,</td><td style=" background:rgb(204,192,218)">1</td>
+				    <td style=" background:rgb(204,192,218)"><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00506-2024-dhninasninosadolescentes_202404171224.pdf" target="_blank" > 506, </a></td><td>0</td><td></td><td style=" background:rgb(216,228,188)">16</td>
+					<td style=" background:rgb(216,228,188)">6,107,114,124,132,170,190,280,306,350,371,386,411,451,470,476,</td></tr><tr><td>21</td>
+					<td>COORDINACIÓN DE GIRAS Y LOGÍSTICA</td><td style="background:rgb(253,233,217)">2</td>
+				    <td style="background:rgb(253,233,217)"><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00350-2024-circular001_202403081607.pdf" target="_blank" > 350 </a> ,<a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00476-2024-CIRCULARSP02.pdf" target="_blank" > 476 </a> ,</td><td>0</td><td></td><td>0</td><td></td><td style=" background:rgb(216,228,188)">1</td>
+					<td style=" background:rgb(216,228,188)">190,</td></tr><tr><td>22</td>
+					<td>COORDINACIÓN DE COMUNICACIÓN SOCIAL</td><td>0</td><td></td><td>0</td><td></td><td>0</td><td></td><td style=" background:rgb(216,228,188)">11</td>
+					<td style=" background:rgb(216,228,188)">60,74,87,97,121,190,302,350,361,368,476,</td></tr><tr><td>23</td>
+					<td>GERENCIA DE LA CIUDAD</td><td>0</td><td></td><td>0</td><td></td><td>0</td><td></td><td style=" background:rgb(216,228,188)">3</td>
+					<td style=" background:rgb(216,228,188)">190,350,476,</td></tr><tr><td>24</td>
+					<td>DIRECCIÓN DE TRANSPARENCIA Y GOBIERNO ABIERTO</td><td>0</td><td></td><td>0</td><td></td><td>0</td><td></td><td style=" background:rgb(216,228,188)">5</td>
+					<td style=" background:rgb(216,228,188)">147,190,350,355,476,</td></tr><tr><td>25</td>
+					<td>COORDINACIÓN DE ASESORES</td><td>0</td><td></td><td>0</td><td></td><td>0</td><td></td><td style=" background:rgb(216,228,188)">3</td>
+					<td style=" background:rgb(216,228,188)">190,350,476,</td></tr><tr><td>26</td>
+					<td>COORDINACIÓN DE PROTECCIÓN CIVIL Y BOMBEROS</td><td>0</td><td></td><td>0</td><td></td><td>0</td><td></td><td style=" background:rgb(216,228,188)">21</td>
+					<td style=" background:rgb(216,228,188)">5,56,102,105,135,137,167,170,188,190,212,245,259,306,350,374,386,435,443,476,477,</td></tr><tr><td>27</td>
+					<td>DIRECCIÓN DE GOBIERNO DIGITAL Y ELECTRÓNICO</td><td>0</td><td></td><td style=" background:rgb(204,192,218)">2</td>
+				    <td style=" background:rgb(204,192,218)"><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00210-2024-237_202402131828.pdf" target="_blank" > 210, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00529-2024-Impciberseguridad.pdf" target="_blank" > 529, </a></td><td>0</td><td></td><td style=" background:rgb(216,228,188)">6</td>
+					<td style=" background:rgb(216,228,188)">136,190,350,355,471,476,</td></tr><tr><td>28</td>
+					<td>COORDINACIÓN DE ASUNTOS RELIGIOSOS</td><td>0</td><td></td><td>0</td><td></td><td>0</td><td></td><td style=" background:rgb(216,228,188)">4</td>
+					<td style=" background:rgb(216,228,188)">190,350,366,476,</td></tr><tr><td>29</td>
+					<td>SÍNDICATURA MUNICIPAL</td><td>0</td><td></td><td>0</td><td></td><td>0</td><td></td><td style=" background:rgb(216,228,188)">2</td>
+					<td style=" background:rgb(216,228,188)">126,261,</td></tr><tr><td>30</td>
+					<td>PRIMER REGIDURIA</td><td>0</td><td></td><td>0</td><td></td><td>0</td><td></td><td>0</td><td></td></tr><tr><td>31</td>
+					<td>SEGUNDA REGIDURÍA</td><td>0</td><td></td><td>0</td><td></td><td>0</td><td></td><td>0</td><td></td></tr><tr><td>32</td>
+					<td>TERCER REGIDURÍA</td><td>0</td><td></td><td>0</td><td></td><td>0</td><td></td><td>0</td><td></td></tr><tr><td>33</td>
+					<td>CUARTA REGIDURÍA</td><td>0</td><td></td><td>0</td><td></td><td>0</td><td></td><td>0</td><td></td></tr><tr><td>34</td>
+					<td>QUINTA REGIDURÍA</td><td>0</td><td></td><td>0</td><td></td><td>0</td><td></td><td>0</td><td></td></tr><tr><td>35</td>
+					<td>SEXTA REGIDURÍA</td><td>0</td><td></td><td>0</td><td></td><td>0</td><td></td><td>0</td><td></td></tr><tr><td>36</td>
+					<td>SÉPTIMA REGIDURÍA</td><td>0</td><td></td><td>0</td><td></td><td>0</td><td></td><td>0</td><td></td></tr><tr><td>37</td>
+					<td>OCTAVA REGIDURÍA</td><td>0</td><td></td><td>0</td><td></td><td>0</td><td></td><td>0</td><td></td></tr><tr><td>38</td>
+					<td>NOVENA REGIDURÍA</td><td>0</td><td></td><td>0</td><td></td><td>0</td><td></td><td>0</td><td></td></tr><tr><td>39</td>
+					<td>SECRETARÍA TÉCNICA DEL CONSEJO MUNICIPAL DE SEGURIDAD PÚBLICA</td><td>0</td><td></td><td style=" background:rgb(204,192,218)">1</td>
+				    <td style=" background:rgb(204,192,218)"><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00496-2024-599_202404171113.pdf" target="_blank" > 496, </a></td><td>0</td><td></td><td style=" background:rgb(216,228,188)">24</td>
+					<td style=" background:rgb(216,228,188)">18,22,36,43,69,108,128,177,190,196,209,211,290,350,407,417,427,429,430,452,476,479,511,535,</td></tr><tr><td>40</td>
+					<td>COORDINACIÓN DE ATENCIÓN CIUDADANA DE LA PRESIDENCIA</td><td style="background:rgb(253,233,217)">1</td>
+				    <td style="background:rgb(253,233,217)"><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00281-2024-207_202402281141.pdf" target="_blank" > 281 </a> ,</td><td style=" background:rgb(204,192,218)">3</td>
+				    <td style=" background:rgb(204,192,218)"><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00151-2024-170_202401311853.pdf" target="_blank" > 151, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00289-2024-queja_202402281612.pdf" target="_blank" > 289, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00476-2024-CIRCULARSP02.pdf" target="_blank" > 476, </a></td><td>0</td><td></td><td style=" background:rgb(216,228,188)">9</td>
+					<td style=" background:rgb(216,228,188)">120,155,173,179,190,214,350,397,504,</td></tr><tr><td>41</td>
+					<td>DIRECCIÓN DE OBRAS PÚBLICAS</td><td style="background:rgb(253,233,217)">2</td>
+				    <td style="background:rgb(253,233,217)"><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00092-2024-113_202401221818.pdf" target="_blank" > 92 </a> ,<a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00389-2024-AvRealdeArcosdivpet1_202403191406.pdf" target="_blank" > 389 </a> ,</td><td style=" background:rgb(204,192,218)">6</td>
+				    <td style=" background:rgb(204,192,218)"><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00166-2024-190_202402011818.pdf" target="_blank" > 166, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00254-2024-283_202402201849.pdf" target="_blank" > 254, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00361-2024-1ertrimestre2024_202403111815.pdf" target="_blank" > 361, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00371-2024-ihaem102_202403121922.pdf" target="_blank" > 371, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00473-2024-568_202404121437.pdf" target="_blank" > 473, </a><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00499-2024-589_202404171110.pdf" target="_blank" > 499, </a></td><td>0</td><td></td><td style=" background:rgb(216,228,188)">7</td>
+					<td style=" background:rgb(216,228,188)">25,154,190,244,296,350,476,</td></tr><tr><td>42</td>
+					<td>DEFENSORÍA MUNICIPAL DE LOS DERECHOS HUMANOS</td><td>0</td><td></td><td>0</td><td></td><td>0</td><td></td><td style=" background:rgb(216,228,188)">8</td>
+					<td style=" background:rgb(216,228,188)">190,350,453,471,476,506,517,520,</td></tr><tr><td>43</td>
+					<td>SECRETARÍA PARTICULAR</td><td>0</td><td></td><td style=" background:rgb(204,192,218)">1</td>
+				    <td style=" background:rgb(204,192,218)"><a href="http://sistemas.metepec.gob.mx/correspondencia/archivos/OdP-00542-2024-641_202404241901.pdf" target="_blank" > 542, </a></td><td style=" background:rgb(255,204,255)">2</td>
+				    <td style=" background:rgb(255,204,255)">520,545,</td><td style=" background:rgb(216,228,188)">148</td>
+					<td style=" background:rgb(216,228,188)">8,14,19,23,39,42,44,50,51,52,54,56,67,76,77,79,96,101,103,104,106,109,111,112,113,115,116,117,119,124,129,130,133,143,144,145,149,156,158,159,172,178,181,183,184,190,191,193,199,200,202,206,215,216,217,218,220,221,223,224,226,227,229,232,237,246,249,250,253,256,257,260,263,264,267,273,276,277,284,285,286,287,292,294,297,299,300,303,304,307,308,310,316,326,327,330,331,332,336,337,338,339,340,343,345,349,350,351,353,358,362,373,375,384,387,388,392,393,394,395,396,406,425,428,439,448,450,460,466,468,469,472,474,476,477,487,498,500,502,507,512,516,517,521,523,530,541,543,</td></tr><tr><td></td>
+			 <td></td>
+			 <td></td>
+			 <td></td>
+			 <td></td>
+			 <td></td>
+			 <td></td>
+			 <td></td>
+			 <td></td>
+			 <td></td></tr><tr><td></td>
+			 <td>TODAS LAS DEPENDENCIAS</td>
+			 <td>14</td>
+			 <td></td>
+			 <td>110</td>
+			 <td></td>
+			 <td>5</td>
+			 <td></td>
+			 <td>719</td>
+			 <td></td></tr>
+</table>
+</body>
+</html>

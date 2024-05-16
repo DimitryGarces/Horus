@@ -127,3 +127,13 @@ CREATE TABLE DepTurnada(
     FOREIGN KEY (Id_Departamento) REFERENCES Departamento(Id_Departamento),
     FOREIGN KEY (Id_Turno) REFERENCES Turno(Id_Turno)
 );
+
+CREATE TABLE Mensaje(
+    Id_Mensaje INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    Id_Usuario INT UNSIGNED,
+    Folio INT UNSIGNED,
+    Mensaje VARCHAR(300),
+    Path VARCHAR(200),
+    FOREIGN KEY (Folio) REFERENCES Situacion(Folio),
+    FOREIGN KEY (Id_Usuario) REFERENCES Usuario(Id_Usuario)
+);

@@ -77,6 +77,7 @@ function verChat(turno, origen, fechaV, path) {
 
             divContenido.innerHTML = `
             <div class="container">
+                <input type="hidden" id="folio" value="${data[0].folio}">
                 <div class="encabezado mt-2">
                     <h6>
                         <span style="font-weight: bold; font-size: 19px;">Remitente:</span>
@@ -119,7 +120,7 @@ const params = new URLSearchParams(window.location.search);
 // Obtener los valores de los parámetros
 const turno = params.get('turno');
 const origen = params.get('origen');
-const fechaV = params.get('tiempo');
+const tiempo = params.get('tiempo');
 const path = params.get('docx');
 
-verChat(turno, origen, fechaV,path);
+verChat(turno, origen, tiempo,path);
