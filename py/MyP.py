@@ -7,7 +7,7 @@ df = pd.read_excel('py/Direcc.xlsx', sheet_name='tareas')
 df = df[~df['Direcciones'].isin(['Promedio de Trabajos', 'Media de Trabajos'])]
 
 # Excluir las filas correspondientes a "asuntos_religiosos" y "Asesores"
-df = df[~df['Direcciones'].isin(['asuntos_religiosos', 'asesores','Defensora_Municipal_de_los_derechos_humanos' ,'Gobierno_digital'])]
+df = df[~df['Direcciones'].isin(['asuntos_religiosos', 'asesores','Defensora_Municipal_de_los_derechos_humanos' ,'Gobierno_Digital_y_Electronico'])]
 
 # Obtener las mejores y peores direcciones
 mejores = df.sort_values(by=['Porcentaje', 'Resueltos'], ascending=[False, False]).head(3)

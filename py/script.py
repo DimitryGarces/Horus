@@ -8,11 +8,10 @@ df = pd.read_excel('py\Direcc.xlsx', sheet_name='tareas')
 conjuntos = {
     'Ciudad': ['Obras_Publicas', 'Servicios_Publicos', 'OPDAPAS', 'Gerencia_de_la_Ciudad', 'Medio_Ambiente', 'Desarrollo_Urbano_y_Metropolitano'],
     'Social_y_de_Resultados': ['Desarrollo_Social', 'Seguridad_Publica', 'Proteccion_Civil_y_Bomberos', 'Cultura', 'Desarrollo_Economico_Turistico_y_Artesanal', 'IMCUFIDEM', 'Comunicacion_Social','Secretaria_Tecnica'],
-    'Legal_y_Planeacion': ['Consejeria_Juridica', 'Contraloria_Municipal', 'Gobernacion', 'Gobierno_por_Resultados', 'Transparencia'],
+    'Legal_y_Planeacion': ['Consejeria_Juridica', 'Contraloria_Municipal', 'Gobernacion', 'Gobierno_por_Resultados', 'Transparencia','Defensoria_Municipal_de_los_Derechos_Humanos'],
     'Administrativo_Financiero': ['Administracion', 'Tesoreria'],
     'Atencion_a_grupos_especiales': ['Educacion', 'Igualdad_de_Genero', 'SMDIF'],
-    'Atencion_Ciudadana':['Atencion_Ciudadana'],
-    'Defensoria_Municipal_de_los_Derechos_Humanos': ['Defensoria_Municipal_de_los_Derechos_Humanos']
+    'Atencion_Ciudadana':['Atencion_Ciudadana']
 }
 
 # Inicializar diccionario para almacenar los datos
