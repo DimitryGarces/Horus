@@ -133,16 +133,22 @@ function cargarHistorial(folio) {
 
                     const mensajeTexto = mensaje.mensaje;
                     const direc = mensaje.nombre;
-                    let mensajeEnlace = '';
+                    let mensajeEnlace;
 
                     if (mensaje.path) {
-                        mensajeEnlace = `<a href="../asuntos/${mensaje.path}" target="_blank">`;
-                        mensajeEnlace += `<img src="../img/pdfChat.png" alt="Ver documento">`;
-                        mensajeEnlace += `</a>`;
+                        mensajeEnlace = document.createElement('button');
+                        mensajeEnlace.type = 'button'; 
+                        mensajeEnlace.classList.add('btn', 'btn-secondary', 'btn-sm', 'ms-auto');
+                        mensajeEnlace.textContent = 'Evidencia';
+                        mensajeEnlace.onclick = () => {
+                            window.open(`../asuntos/${mensaje.path}`, '_blank');
+                        };
                     }
 
-                    itemLista.innerHTML = `${direc} dice: ${mensajeTexto} ${mensajeEnlace}`;
-
+                    itemLista.innerHTML = `${direc} dice: ${mensajeTexto}`;
+                    if (mensaje.path) {
+                        itemLista.appendChild(mensajeEnlace);
+                    }
                     lista.appendChild(itemLista);
                 });
                 historialMensajes.appendChild(lista);

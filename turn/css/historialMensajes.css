@@ -17,3 +17,9 @@
 .mensaje a:hover {
     text-decoration: underline;
 }
+
+.mensaje {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
