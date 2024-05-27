@@ -102,11 +102,35 @@
                     </div>
                 </div>
             </div>
-            <div>
-                <label for=""> </label>
+            <!-- Aqui iria un boton -->
+            <div class="mb-2 mt-2 ml-5">
+                <div class="d-flex justify-content-end baja">
+
+                </div>
+
+                <label>¿Dudas o comentarios? Escribenos directamente: </label>
             </div>
         </div>
     </div>
+    <div class="modal fade" id="confirmarBajaModal" tabindex="-1" aria-labelledby="confirmarBajaModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmarBajaModalLabel">Confirmar Cumplimiento del Asunto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ¿Estás seguro de que deseas dar de baja este asunto?<br>
+                    Todo asunto finalizado sin su evidencia de cumplimiento puede ser sancionado.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success" id="btnConfirmarBaja">Finalizar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="./js-chat/recuperaTurn.js"></script>

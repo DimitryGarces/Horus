@@ -107,6 +107,9 @@ function subirPdf(formData) {
             });
     });
 }
+function finalizarAsunto(folio){
+    window.close();
+}
 function cargarHistorial(folio) {
     return new Promise((resolve, reject) => {
         const formData = new FormData();
@@ -122,12 +125,31 @@ function cargarHistorial(folio) {
                 return response.json();
             })
             .then(data => {
+                const mostrarBotonBaja = data.mostrarBotonBaja;
+                const contenedorBaja = document.querySelector('.baja');
+                if (mostrarBotonBaja && (!contenedorBaja || contenedorBaja.childElementCount === 0)) {
+                    const botonDarDeBaja = document.createElement('button');
+                    botonDarDeBaja.type = 'button';
+                    botonDarDeBaja.classList.add('btn', 'btn-danger', 'ex','mb-3');
+                    botonDarDeBaja.textContent = 'Dar de baja';
+                    botonDarDeBaja.onclick = () => {
+                        const confirmarBajaModal = new bootstrap.Modal(document.getElementById('confirmarBajaModal'));
+                        confirmarBajaModal.show();
+                        const btnConfirmarBaja = document.getElementById('btnConfirmarBaja');
+                        btnConfirmarBaja.onclick = () => {
+                            confirmarBajaModal.hide();
+                            finalizarAsunto(folio);
+                        };
+                    };
+                    document.querySelector('.baja').appendChild(botonDarDeBaja);
+                }
+
                 const historialMensajes = document.getElementById('historialMensajes');
                 historialMensajes.innerHTML = '';
 
                 const lista = document.createElement('ul');
 
-                data.forEach(mensaje => {
+                data.mensajes.forEach(mensaje => {
                     const itemLista = document.createElement('li');
                     itemLista.classList.add('mensaje');
 
@@ -137,7 +159,7 @@ function cargarHistorial(folio) {
 
                     if (mensaje.path) {
                         mensajeEnlace = document.createElement('button');
-                        mensajeEnlace.type = 'button'; 
+                        mensajeEnlace.type = 'button';
                         mensajeEnlace.classList.add('btn', 'btn-secondary', 'btn-sm', 'ms-auto');
                         mensajeEnlace.textContent = 'Evidencia';
                         mensajeEnlace.onclick = () => {

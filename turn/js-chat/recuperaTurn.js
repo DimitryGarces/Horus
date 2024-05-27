@@ -74,7 +74,6 @@ function verChat(turno, origen, fechaV, path) {
         .then(response => response.json())
         .then(data => {
             const divContenido = document.querySelector('.turno');
-
             divContenido.innerHTML = `
             <div class="container">
                 <input type="hidden" id="folio" value="${data[0].folio}">
@@ -114,10 +113,7 @@ function verChat(turno, origen, fechaV, path) {
             console.error('Error al obtener los mensajes:', error);
         });
 }
-// Obtener los parámetros de la URL
 const params = new URLSearchParams(window.location.search);
-
-// Obtener los valores de los parámetros
 const turno = params.get('turno');
 const origen = params.get('origen');
 const tiempo = params.get('tiempo');
