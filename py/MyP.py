@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Leer el archivo Excel
-df = pd.read_excel('py/Direcc.xlsx', sheet_name='tareas')
+df = pd.read_excel('py/Direcc.xlsx', sheet_name='Sheet1')
 
 # Eliminar filas que contienen el promedio y la media
 df = df[~df['Direcciones'].isin(['Promedio de Trabajos', 'Media de Trabajos'])]

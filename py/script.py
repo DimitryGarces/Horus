@@ -2,7 +2,7 @@ import pandas as pd
 import json
 
 # Leer el archivo Excel
-df = pd.read_excel('py\Direcc.xlsx', sheet_name='tareas')
+df = pd.read_excel('py\Direcc.xlsx', sheet_name='Sheet1')
 
 # Definir los conjuntos y las direcciones correspondientes
 conjuntos = {
