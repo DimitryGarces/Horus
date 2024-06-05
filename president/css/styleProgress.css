@@ -1,0 +1,13 @@
+/* Definir colores personalizados */
+.btn-custom-primary {
+    background-color: #4CAF50; /* Verde */
+    border-color: #4CAF50;
+    color: white;
+  }
+  
+  .btn-custom-secondary {
+    background-color: #5c5c5c; /* Azul */
+    border-color: #e2f016;
+    color: white;
+  }
+  

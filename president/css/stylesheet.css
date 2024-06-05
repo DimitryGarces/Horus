@@ -1,0 +1,96 @@
+/*.ir {
+    background-color: #4CAF50; 
+    border: none; 
+    color: white; 
+    padding: 10px 20px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px;
+    margin: 4px 2px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    align-items: center;
+    align-self: center;
+}
+*/
+.ir {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    padding: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+}
+
+.ir img {
+    width: 25px;
+    height: 25px;
+    display: block;
+}
+
+
+
+.ir i {
+    margin-right: 5px;
+}
+
+body {
+    font-family: 'Gotham', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Gotham', sans-serif;
+}
+
+h1,
+h3 {
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+h4 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.extras img {
+    width: 370px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+
+.extras {
+    text-align: center;
+}
+
+.form-hidden {
+    display: none;
+}
+
+.iniciarS {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.help-icon {
+    font-size: 14px;
+    color: #6c757d;
+    cursor: pointer;
+    margin-left: 5px;
+}

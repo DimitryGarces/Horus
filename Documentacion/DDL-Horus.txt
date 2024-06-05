@@ -1,0 +1,139 @@
+CREATE TABLE Rendimiento (
+    Id_Rendimiento TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    Fecha DATE NOT NULL,
+    Resueltos INT UNSIGNED NOT NULL,
+    Pendientes INT UNSIGNED NOT NULL,
+    Rendimiento TINYINT UNSIGNED NOT NULL
+);
+
+CREATE TABLE Gabinete (
+    Id_Gabinete TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(50)  NOT NULL
+);
+
+
+CREATE TABLE Tipo(
+    Id_Tipo TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    Nombre Varchar(50) NOT NULL
+);
+
+CREATE TABLE Departamento(
+    Id_Departamento TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    Id_DepSup TINYINT UNSIGNED,
+    Id_Rendimiento TINYINT UNSIGNED,
+    Id_Tipo TINYINT UNSIGNED,
+    Nombre Varchar(100) NOT NULL,
+    FOREIGN KEY (Id_DepSup) REFERENCES Departamento(Id_Departamento),
+    FOREIGN KEY (Id_Rendimiento) REFERENCES Rendimiento(Id_Rendimiento),
+    FOREIGN KEY (Id_Tipo) REFERENCES Tipo(Id_Tipo)
+);
+
+CREATE TABLE Gabinete_Dep(
+    Id_Gabinete TINYINT UNSIGNED,
+    Id_Departamento TINYINT UNSIGNED,
+    FOREIGN KEY (Id_Gabinete) REFERENCES Gabinete(Id_Gabinete),
+    FOREIGN KEY (Id_Departamento) REFERENCES Departamento(Id_Departamento) 
+);
+
+CREATE TABLE DatosUsuario(
+    Id_DatosU INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR (60) NOT NULL,
+    ApellidoP VARCHAR (60) NOT NULL,
+    ApellidoM VARCHAR (60) NOT NULL,
+    Usuario VARCHAR (15) NOT NULL,
+    Contrasenia VARCHAR (12) NOT NULL,
+    Telefono VARCHAR (10) NOT NULL
+);
+
+
+CREATE TABLE Usuario(
+    Id_Usuario INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    Id_DatosU INT UNSIGNED,
+    Id_Departamento TINYINT UNSIGNED,
+    reloginDigest VARCHAR(255),
+    FOREIGN KEY (Id_DatosU) REFERENCES DatosUsuario(Id_DatosU),
+    FOREIGN KEY (Id_Departamento) REFERENCES Departamento(Id_Departamento)
+);
+
+
+CREATE TABLE Prioridad(
+    Id_Prioridad TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR (50) NOT NULL
+);
+
+CREATE TABLE Estatus(
+    Id_Estatus TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    Estado VARCHAR (35) NOT NULL,
+    Descripcion VARCHAR (150) NOT NULL
+);
+
+CREATE TABLE Procedencia(
+    Id_Procedencia TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    Tipo VARCHAR (35) NOT NULL
+);
+
+CREATE TABLE CategoriaAsunto(
+    Id_Categoria TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    Categoria VARCHAR(30)
+);
+
+CREATE TABLE Servicio (
+    Id_Servicio INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(200) NOT NULL,
+    Descripcion VARCHAR(200),
+    Id_Categoria TINYINT UNSIGNED,
+    FOREIGN KEY (Id_Categoria) REFERENCES CategoriaAsunto(Id_Categoria)
+);
+
+CREATE TABLE Situacion(
+    Folio INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    Id_Prioridad TINYINT UNSIGNED,
+    Id_Estatus TINYINT UNSIGNED,
+    Id_Procedencia TINYINT UNSIGNED,
+    Remitente VARCHAR (60) NOT NULL,
+    Asunto VARCHAR (150) NOT NULL,
+    Fecha_Recibida DATE NOT NULL,
+    Fecha_Vencimiento DATE NOT NULL,
+    Fecha_Finalizacion DATE,
+    Path VARCHAR(200) NOT NULL,
+    Id_Servicio INT UNSIGNED,
+    FolioGen VARCHAR (50),
+    FOREIGN KEY (Id_Servicio) REFERENCES Servicio (Id_Servicio),
+    FOREIGN KEY (Id_Prioridad) REFERENCES Prioridad(Id_Prioridad),
+    FOREIGN KEY (Id_Estatus) REFERENCES Estatus(Id_Estatus),
+    FOREIGN KEY (Id_Procedencia) REFERENCES Procedencia(Id_Procedencia)
+);
+
+CREATE TABLE Turno(
+    Id_Turno INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    Id_UsuarioEnvia INT UNSIGNED,
+    Folio INT UNSIGNED,
+    InstruccionGen VARCHAR (200),
+    FechaGenerada DATE NOT NULL,
+    FOREIGN KEY (Id_UsuarioEnvia) REFERENCES Usuario(Id_Usuario),
+    FOREIGN KEY (Folio) REFERENCES Situacion(Folio)
+);
+
+CREATE TABLE Archivo(
+    Id_Turno INT UNSIGNED,
+    Path VARCHAR (200) NOT NULL,
+    FOREIGN KEY (Id_Turno) REFERENCES Turno(Id_Turno)
+);
+
+CREATE TABLE DepTurnada(
+    Id_Departamento TINYINT UNSIGNED,
+    Id_Turno INT UNSIGNED,
+    InstruccionInd VARCHAR (200),
+    FOREIGN KEY (Id_Departamento) REFERENCES Departamento(Id_Departamento),
+    FOREIGN KEY (Id_Turno) REFERENCES Turno(Id_Turno)
+);
+
+CREATE TABLE Mensaje(
+    Id_Mensaje INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    Id_Usuario INT UNSIGNED,
+    Folio INT UNSIGNED,
+    Mensaje VARCHAR(300),
+    Path VARCHAR(200),
+    FOREIGN KEY (Folio) REFERENCES Situacion(Folio),
+    FOREIGN KEY (Id_Usuario) REFERENCES Usuario(Id_Usuario)
+);

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciudad</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ApexCharts -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link rel="stylesheet" href="./css/stylesheet.css">
+</head>
+
+<body>
+    <div class="container shadow">
+        <header>
+            <div class="container extras">
+                <img src="../img/horus-s.png" class="img-fluid justify-content-center" alt="Imagen"
+                    style="max-width: 50%; height: auto;">
+            </div>
+            <h2 class="text-center mt-4 mb-4">Resumen General De Comportamiento en Atención de TATs (De la Ciudad)</h2>
+            
+        </header>
+        <div>
+            <button class="ir shadow volver" data-producto="Ciudad">
+                <img src="../img/volver.png" alt="Volver" />
+            </button>
+        </div>
+        
+        <br />
+        <!-- Dependencia 1: TESORERIA -->
+        <div class="row mt-4 mb-4">
+            <div class="col-md-4">
+                <div class="chart-title h3">Obras Públicas</div>
+                <div id="Ciudad_Obras_Publicas"></div>
+            </div>
+
+            <!-- Dependencia 2: ADMINISTRACIÓN -->
+            <div class="col-md-4">
+                <div class="chart-title h3">Servicios Públicos</div>
+                <div id="Ciudad_Servicios_Publicos"></div>
+            </div>
+
+            <!-- Dependencia 3: GOBERNACIÓN -->
+            <div class="col-md-4">
+                <div class="chart-title h3">OPDAPAS</div>
+                <div id="Ciudad_OPDAPAS"></div>
+            </div>
+        </div>
+
+        <!-- Dependencia 4: DESARROLLO ECONÓMICO, TURÍSTICO Y ARTESANAL -->
+        <div class="row mt-4 mb-4 justify-content-center">
+            <div class="col-md-4">
+                <div class="chart-title h3">Gerencia de la Ciudad</div>
+                <div id="Ciudad_Gerencia_de_la_Ciudad"></div>
+            </div>
+
+            <!-- Dependencia 5: DESARROLLO SOCIAL -->
+            <div class="col-md-4">
+                <div class="chart-title h3">Medio Ambiente</div>
+                <div id="Ciudad_Medio_Ambiente"></div>
+            </div>
+
+            <!-- Dependencia 5: DESARROLLO SOCIAL -->
+            <div class="col-md-4">
+                <div class="chart-title h3">Desarrollo Urbano y Metropolitano</div>
+                <div id="Ciudad_Desarrollo_Urbano_y_Metropolitano"></div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/GraficasDirecciones.js"></script>
+    <script src="./js/volver.js"></script>
+
+</body>
+
+</html>
