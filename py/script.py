@@ -56,7 +56,7 @@ for conjunto, data in datos_json.items():
     }
 
 # Escribir el JSON en un archivo
-with open('datos.json', 'w') as file:
+with open('president/datos.json', 'w') as file:
     json.dump(datos_json, file, indent=4)
 
 print("Archivo 'datos.json' generado correctamente.")
