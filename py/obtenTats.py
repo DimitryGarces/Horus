@@ -6,7 +6,7 @@ name_mapping = {
     'CONSEJERÍA JURÍDICO': 'Consejeria_Juridica',
     'DIRECCIÓN DE GOBERNACIÓN': 'Gobernacion',
     'DIRECCIÓN DE DESARROLLO ECONÓMICO, TURÍSTICO Y ARTESANAL': 'Desarrollo_Economico_Turistico_y_Artesanal',
-    'DIRECCIÓN DE DESARROLLO SOCIAL': 'Desarrollo_Social',
+    'DIRECCIÓN DE DESARROLLO SOCIAL Y ASUNTOS INDÍGENAS': 'Desarrollo_Social',
     'DIRECCIÓN DE SEGURIDAD PÚBLICA': 'Seguridad_Publica',
     'DIRECCIÓN DE DESARROLLO URBANO Y METROPOLITANO': 'Desarrollo_Urbano_y_Metropolitano',
     'DIRECCIÓN DE CULTURA': 'Cultura',
